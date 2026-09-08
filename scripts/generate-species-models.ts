@@ -41,21 +41,39 @@ type Silhouette =
   | "squid"
   | "ape";
 
-const QUATERNIUS_META: Record<
+const LICENSED_POLY_PIZZA: Record<
   string,
-  { source: string; attribution: string; notes: string }
+  {
+    source: string;
+    attribution: string;
+    notes: string;
+    creator: string;
+    license: "CC0" | "CC_BY";
+  }
 > = {
+  "african-elephant": {
+    source: "https://poly.pizza/m/a27MA0rXyyj",
+    attribution: "Poly by Google, CC BY 3.0 (via Poly Pizza)",
+    notes:
+      "Low-poly stylized educational mesh from Google Poly archive. Not a photogrammetric scan.",
+    creator: "Poly by Google",
+    license: "CC_BY",
+  },
   "grey-wolf": {
     source: "https://poly.pizza/m/P1gU3Qkr9r",
     attribution: "Quaternius, CC0 (via Poly Pizza)",
     notes:
       "Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.",
+    creator: "Quaternius",
+    license: "CC0",
   },
   "red-fox": {
     source: "https://poly.pizza/m/Bc97C66HKi",
     attribution: "Quaternius, CC0 (via Poly Pizza)",
     notes:
       "Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.",
+    creator: "Quaternius",
+    license: "CC0",
   },
 };
 
@@ -294,19 +312,20 @@ function buildThreeDBlock(options: {
   slug: string;
   photoUrl: string;
   fileSizeBytes: number;
-  quaternius: boolean;
+  licensed: boolean;
 }): string {
-  const meta = QUATERNIUS_META[options.slug];
-  const creator = options.quaternius ? "Quaternius" : "Fauna";
-  const source = options.quaternius
+  const meta = LICENSED_POLY_PIZZA[options.slug];
+  const creator = options.licensed ? (meta?.creator ?? "Fauna") : "Fauna";
+  const source = options.licensed
     ? (meta?.source ?? "https://poly.pizza")
     : "Project-authored stylized educational mesh";
-  const attribution = options.quaternius
-    ? (meta?.attribution ?? "Quaternius, CC0")
+  const attribution = options.licensed
+    ? (meta?.attribution ?? "Licensed educational mesh")
     : "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal.";
-  const notes = options.quaternius
+  const notes = options.licensed
     ? (meta?.notes ?? "Licensed educational mesh.")
     : "Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.";
+  const license = options.licensed ? (meta?.license ?? "CC0") : "CC0";
 
   return `threeD:
   - url: /models/${options.slug}.glb
@@ -314,7 +333,7 @@ function buildThreeDBlock(options: {
     fileSizeBytes: ${options.fileSizeBytes}
     creator: ${yamlQuote(creator)}
     source: ${yamlQuote(source)}
-    license: CC0
+    license: ${license}
     attribution: ${yamlQuote(attribution)}
     modified: false
     version: "1.0.0"
@@ -355,24 +374,26 @@ async function main() {
     const doc = parse(raw) as SpeciesDoc;
     const slug = doc.slug;
     const dest = path.join(modelsDir, `${slug}.glb`);
-    const quaterniusMeta = Boolean(QUATERNIUS_META[slug]);
+    const licensedMeta = LICENSED_POLY_PIZZA[slug];
     let fileSizeBytes = 0;
-    let usedQuaterniusFile = false;
+    let usedLicensedFile = false;
 
-    if (quaterniusMeta) {
+    if (licensedMeta) {
       try {
         const existing = await stat(dest);
         if (existing.size > 50_000) {
           fileSizeBytes = existing.size;
-          usedQuaterniusFile = true;
-          console.info(`keep Quaternius ${slug} (${fileSizeBytes} bytes)`);
+          usedLicensedFile = true;
+          console.info(
+            `keep licensed ${slug} (${fileSizeBytes} bytes, ${licensedMeta.creator})`,
+          );
         }
       } catch {
         // fall through to generate
       }
     }
 
-    if (!usedQuaterniusFile) {
+    if (!usedLicensedFile) {
       const result = await writeBoxMeshGlb({
         outputPath: dest,
         name: `${doc.commonName.replace(/\s+/g, "")}Educational`,
@@ -394,25 +415,25 @@ async function main() {
       slug,
       photoUrl: photo,
       fileSizeBytes,
-      quaternius: usedQuaterniusFile,
+      licensed: usedLicensedFile,
     });
     await writeFile(full, upsertThreeD(raw, threeDBlock));
 
     licenses.models.push({
       speciesSlug: slug,
       file: `public/models/${slug}.glb`,
-      creator: usedQuaterniusFile ? "Quaternius" : "Fauna",
-      source: usedQuaterniusFile
-        ? QUATERNIUS_META[slug]?.source
+      creator: usedLicensedFile ? licensedMeta?.creator : "Fauna",
+      source: usedLicensedFile
+        ? licensedMeta?.source
         : "scripts/generate-species-models.ts",
-      license: "CC0",
-      attribution: usedQuaterniusFile
-        ? QUATERNIUS_META[slug]?.attribution
+      license: usedLicensedFile ? licensedMeta?.license : "CC0",
+      attribution: usedLicensedFile
+        ? licensedMeta?.attribution
         : "Fauna educational mesh, CC0. Not a photogrammetric scan.",
       modified: false,
       version: "1.0.0",
-      notes: usedQuaterniusFile
-        ? "Low-poly stylized educational mesh."
+      notes: usedLicensedFile
+        ? "Licensed educational mesh from Poly Pizza."
         : "Box-construction educational stand-in.",
       fileSizeBytes,
     });

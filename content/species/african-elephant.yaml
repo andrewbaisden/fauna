@@ -154,16 +154,16 @@ media:
 threeD:
   - url: /models/african-elephant.glb
     format: GLB
-    fileSizeBytes: 2272
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 1094848
+    creator: Poly by Google
+    source: https://poly.pizza/m/a27MA0rXyyj
+    license: CC_BY
+    attribution: Poly by Google, CC BY 3.0 (via Poly Pizza)
     modified: false
     version: "1.0.0"
-    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
-    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    notes: Low-poly stylized educational mesh from Google Poly archive. Not a photogrammetric scan.
 rangeGeometry:
   confidence: LOW
   sourceKey: gbif-elephant

@@ -3,14 +3,14 @@
     {
       "speciesSlug": "african-elephant",
       "file": "public/models/african-elephant.glb",
-      "creator": "Fauna",
-      "source": "scripts/generate-species-models.ts",
-      "license": "CC0",
-      "attribution": "Fauna educational mesh, CC0. Not a photogrammetric scan.",
+      "creator": "Poly by Google",
+      "source": "https://poly.pizza/m/a27MA0rXyyj",
+      "license": "CC_BY",
+      "attribution": "Poly by Google, CC BY 3.0 (via Poly Pizza)",
       "modified": false,
       "version": "1.0.0",
-      "notes": "Box-construction educational stand-in.",
-      "fileSizeBytes": 2272
+      "notes": "Low-poly stylized educational mesh from Google Poly archive. Not a photogrammetric scan.",
+      "fileSizeBytes": 1094848
     },
     {
       "speciesSlug": "american-bison",

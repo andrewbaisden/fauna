@@ -1,11 +1,16 @@
 /**
- * Fetches the licensed Quaternius CC0 GLBs used by grey-wolf and red-fox.
+ * Fetches licensed Poly Pizza GLBs used by the catalogue.
  * Run after clone: pnpm assets:fetch
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const MODELS = [
+  {
+    slug: "african-elephant",
+    url: "https://static.poly.pizza/b8ca84f2-02b2-4c84-92c0-b5f8b0eee90e.glb",
+    source: "https://poly.pizza/m/a27MA0rXyyj",
+  },
   {
     slug: "grey-wolf",
     url: "https://static.poly.pizza/f1d12388-e39b-4157-b32a-646a1d089fc4.glb",
