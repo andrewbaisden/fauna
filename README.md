@@ -4,6 +4,8 @@ An interactive wildlife encyclopedia and digital field guide. Discover a species
 
 Fauna is not a Pokédex. There are no hit points, capture mechanics or fictional stats. Size, mass, speed, diet, habitat, conservation status and life stages are scientific concepts with sources.
 
+![Fauna](docs/fauna.png)
+
 ## Features
 
 - Curated catalogue of 30 launch species (quality over a global dump)
