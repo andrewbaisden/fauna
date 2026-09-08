@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { defineConfig, env } from "prisma/config";
+import { withVerifiedTls } from "./src/lib/pg-connection";
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
@@ -8,6 +9,6 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    url: process.env.DIRECT_URL || env("DATABASE_URL"),
+    url: withVerifiedTls(process.env.DIRECT_URL || env("DATABASE_URL")),
   },
 });

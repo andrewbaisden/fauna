@@ -1,6 +1,7 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@/generated/prisma/client";
 import { env } from "@/lib/env";
+import { withVerifiedTls } from "@/lib/pg-connection";
 import { reportError } from "@/lib/report-error";
 
 const globalForPrisma = globalThis as unknown as {
@@ -8,7 +9,9 @@ const globalForPrisma = globalThis as unknown as {
 };
 
 function createPrismaClient(): PrismaClient {
-  const adapter = new PrismaPg({ connectionString: env.DATABASE_URL });
+  const adapter = new PrismaPg({
+    connectionString: withVerifiedTls(env.DATABASE_URL),
+  });
   const client = new PrismaClient({
     adapter,
     log: [{ emit: "event", level: "error" }],

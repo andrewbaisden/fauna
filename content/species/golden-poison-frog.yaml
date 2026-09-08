@@ -114,13 +114,13 @@ media:
 threeD:
   - url: /models/golden-poison-frog.glb
     format: GLB
-    fileSizeBytes: 1776
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 11871372
+    creator: DigitalLife3D
+    source: "https://skfb.ly/67DEv"
+    license: CC_BY_NC
+    attribution: "\"Model 20 - Panamanian Golden Frog\" (https://skfb.ly/67DEv) by DigitalLife3D is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phyllobates_terribilis.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phyllobates_terribilis.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    notes: "Sketchfab mesh is a Panamanian golden frog (Atelopus zeteki), used as a living-form stand-in. CC-BY-NC: non-commercial hosting only."

@@ -112,13 +112,13 @@ media:
 threeD:
   - url: /models/komodo-dragon.glb
     format: GLB
-    fileSizeBytes: 1940
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 12511768
+    creator: all of life
+    source: "https://skfb.ly/oF8MU"
+    license: CC_BY
+    attribution: "\"Komodo Dragon\" (https://skfb.ly/oF8MU) by all of life is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Komodo_dragon_at_Komodo_National_Park.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Komodo_dragon_at_Komodo_National_Park.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    notes: Sketchfab living-form mesh for the Fauna viewer.

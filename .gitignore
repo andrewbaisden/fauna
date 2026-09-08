@@ -55,6 +55,7 @@ next-env.d.ts
 # 3D binaries (generate or fetch via the asset pipeline)
 /public/models/*.glb
 /public/models/*.gltf
+/public/models-to-sort/
 
 # Mirrored species photos (local or before Blob upload)
 /public/media/*

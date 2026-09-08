@@ -121,16 +121,16 @@ media:
 threeD:
   - url: /models/giant-pacific-octopus.glb
     format: GLB
-    fileSizeBytes: 1948
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 12983872
+    creator: s4dned
+    source: "https://skfb.ly/pDoYT"
+    license: CC_BY
+    attribution: "\"octopus\" (https://skfb.ly/pDoYT) by s4dned is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/33/Octopus3.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/33/Octopus3.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    notes: "Sketchfab living-form mesh titled octopus, used for this catalogue entry."
 rangeGeometry:
   confidence: LOW
   sourceKey: iucn-octopus

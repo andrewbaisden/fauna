@@ -5,6 +5,9 @@ const ALLOWED_LICENSES = [
   "CC0",
   "CC_BY",
   "CC_BY_SA",
+  "CC_BY_NC",
+  "CC_BY_NC_SA",
+  "CC_BY_NC_ND",
   "SMITHSONIAN_OA",
   "PUBLIC_DOMAIN",
 ] as const;

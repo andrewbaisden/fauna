@@ -154,16 +154,16 @@ media:
 threeD:
   - url: /models/african-elephant.glb
     format: GLB
-    fileSizeBytes: 1094848
-    creator: Poly by Google
-    source: https://poly.pizza/m/a27MA0rXyyj
-    license: CC_BY
-    attribution: Poly by Google, CC BY 3.0 (via Poly Pizza)
+    fileSizeBytes: 4422332
+    creator: Filcomet
+    source: "https://skfb.ly/DRJT"
+    license: CC_BY_NC
+    attribution: "\"ELEPHANT\" (https://skfb.ly/DRJT) by Filcomet is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/)."
     modified: false
-    version: "1.0.0"
-    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
-    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
-    notes: Low-poly stylized educational mesh from Google Poly archive. Not a photogrammetric scan.
+    version: "2.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
+    notes: "Sketchfab mesh for the Fauna viewer. CC-BY-NC: non-commercial hosting only."
 rangeGeometry:
   confidence: LOW
   sourceKey: gbif-elephant

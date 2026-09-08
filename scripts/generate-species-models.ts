@@ -364,6 +364,16 @@ async function main() {
     .filter((file) => file.endsWith(".yaml"))
     .sort();
 
+  const existingLicenses = JSON.parse(
+    await readFile(licensesPath, "utf8").catch(() => '{"models":[]}'),
+  ) as { models?: Array<Record<string, unknown>> };
+  const existingBySlug = new Map(
+    (existingLicenses.models ?? []).map((item) => [
+      String(item.speciesSlug),
+      item,
+    ]),
+  );
+
   const licenses = {
     models: [] as Array<Record<string, unknown>>,
   };
@@ -375,22 +385,22 @@ async function main() {
     const slug = doc.slug;
     const dest = path.join(modelsDir, `${slug}.glb`);
     const licensedMeta = LICENSED_POLY_PIZZA[slug];
+    const priorLicense = existingBySlug.get(slug);
+    const priorSource = String(priorLicense?.source ?? "");
     let fileSizeBytes = 0;
     let usedLicensedFile = false;
 
-    if (licensedMeta) {
-      try {
-        const existing = await stat(dest);
-        if (existing.size > 50_000) {
-          fileSizeBytes = existing.size;
-          usedLicensedFile = true;
-          console.info(
-            `keep licensed ${slug} (${fileSizeBytes} bytes, ${licensedMeta.creator})`,
-          );
-        }
-      } catch {
-        // fall through to generate
+    try {
+      const existing = await stat(dest);
+      if (existing.size > 50_000) {
+        fileSizeBytes = existing.size;
+        usedLicensedFile = true;
+        console.info(
+          `keep licensed ${slug} (${fileSizeBytes} bytes, ${String(priorLicense?.creator ?? licensedMeta?.creator ?? "unknown")})`,
+        );
       }
+    } catch {
+      // fall through to generate
     }
 
     if (!usedLicensedFile) {
@@ -402,6 +412,11 @@ async function main() {
       });
       fileSizeBytes = result.byteLength;
       console.info(`wrote ${dest} (${fileSizeBytes} bytes)`);
+    }
+
+    if (usedLicensedFile && priorSource.includes("skfb.ly") && priorLicense) {
+      licenses.models.push({ ...priorLicense, fileSizeBytes });
+      continue;
     }
 
     const photo =

@@ -3,7 +3,7 @@
  * /models/<slug>.glb → /api/media/models/<slug>.glb in media-map.json
  */
 import { createReadStream } from "node:fs";
-import { readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { open, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { put } from "@vercel/blob";
 import "dotenv/config";
@@ -12,6 +12,28 @@ interface MediaMap {
   version: number;
   description?: string;
   hosts: Record<string, string>;
+}
+
+const GLB_MAGIC = Buffer.from("glTF");
+
+async function isValidGlb(
+  filePath: string,
+): Promise<{ ok: boolean; size: number }> {
+  const info = await stat(filePath);
+  if (info.size < 12) {
+    return { ok: false, size: info.size };
+  }
+  const handle = await open(filePath, "r");
+  try {
+    const header = Buffer.alloc(4);
+    const { bytesRead } = await handle.read(header, 0, 4, 0);
+    return {
+      ok: bytesRead === 4 && header.equals(GLB_MAGIC),
+      size: info.size,
+    };
+  } finally {
+    await handle.close();
+  }
 }
 
 async function main() {
@@ -34,19 +56,21 @@ async function main() {
   }
 
   let uploaded = 0;
+  let skipped = 0;
   for (const file of files) {
     const localPath = path.join(modelsDir, file);
     const pathname = `models/${file}`;
     const sourceUrl = `/models/${file}`;
     const hosted = `/api/media/${pathname}`;
+    const validity = await isValidGlb(localPath);
 
-    if (map.hosts[sourceUrl] === hosted) {
-      const info = await stat(localPath);
-      console.info(`skip ${file} (${info.size} bytes)`);
+    if (!validity.ok) {
+      console.warn(`skip ${file}: not a valid GLB (${validity.size} bytes)`);
+      skipped += 1;
       continue;
     }
 
-    console.info(`upload ${file}…`);
+    console.info(`upload ${file} (${validity.size} bytes)…`);
     const stream = createReadStream(localPath);
     await put(pathname, stream, {
       access: "private",
@@ -62,7 +86,7 @@ async function main() {
   }
 
   console.info(
-    `Done. Uploaded ${uploaded}. Mapped models: ${files.length}. Run pnpm db:seed.`,
+    `Done. Uploaded ${uploaded}, skipped ${skipped}. Mapped models: ${Object.keys(map.hosts).filter((key) => key.startsWith("/models/")).length}. Run pnpm db:seed.`,
   );
 }
 

@@ -68,4 +68,4 @@ Vercel for the app, [Neon](https://neon.tech) for PostgreSQL, [Vercel Blob](http
 
 ## Attribution
 
-Biological facts are curated citations (IUCN pages, Animal Diversity Web, AnAge, GBIF names). Photographs are Wikimedia Commons files with licenses stored on each `MediaAsset`. The African elephant 3D mesh is a project-authored CC0 educational stand-in, not a scan of a living animal. See [ASSETS.md](ASSETS.md).
+Biological facts are curated citations (IUCN pages, Animal Diversity Web, AnAge, GBIF names). Photographs are Wikimedia Commons files with licenses stored on each `MediaAsset`. 3D meshes are Sketchfab models with creator, source URL, license and attribution on each `ThreeDAsset` (see [ASSETS.md](ASSETS.md) and `content/assets/licenses.json`).

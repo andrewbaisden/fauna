@@ -17,7 +17,9 @@ Do not use CC-BY-NC for production hosting we cannot guarantee will remain non-c
 
 Do not download Sketchfab Standard-license models (non-redistributable).
 
-Do not commit large binaries. Git holds `content/assets/licenses.json` and processing scripts. GLBs live in `public/models/` locally (gitignored) and on **private Vercel Blob** in production (`models/<slug>.glb`), served through `/api/media/models/…`.
+The current catalogue includes Sketchfab **CC-BY-NC / CC-BY-NC-SA / CC-BY-NC-ND** meshes (elephant, bison, emperor penguin, golden-poison-frog stand-in, green-sea-turtle stand-in, lion, red fox, whale shark). They are recorded as such in `content/assets/licenses.json` and each species YAML `threeD` block. Host them only on a non-commercial Fauna instance, or replace them before any commercial deploy.
+
+Do not commit large binaries. Git holds `content/assets/licenses.json` and processing scripts. GLBs live in `public/models/` locally (gitignored) and on **private Vercel Blob** in production (`models/<slug>.glb`), served through `/api/media/models/…`. After replacing local GLBs, run `pnpm assets:mirror-models` so production Blob matches; until then, development prefers `public/models`.
 
 ## 3D pipeline
 
@@ -30,6 +32,7 @@ Generate educational stand-ins for the full catalogue:
 ```bash
 pnpm assets:models          # box-mesh GLB per species + YAML threeD
 pnpm assets:fetch           # overwrite grey-wolf / red-fox with Quaternius CC0
+pnpm assets:import-sketchfab  # copy public/models-to-sort onto catalogue slugs
 pnpm assets:mirror-models   # upload GLBs to private Blob
 pnpm db:seed
 ```
@@ -37,7 +40,7 @@ pnpm db:seed
 ### Checklist: add a licensed GLB for a species
 
 1. **Pick a species** that already has a full YAML profile (photo, measurements, sources).
-2. **Find a redistributable model** (CC0 / CC-BY / Smithsonian OA). Preferred sources: [Poly Pizza](https://poly.pizza) (filter CC0), [Quaternius](https://quaternius.com), Smithsonian 3D, OpenGameArt CC0 packs. Reject Sketchfab Standard and CC-BY-NC.
+2. **Find a redistributable model** (CC0 / CC-BY / Smithsonian OA). Preferred sources: [Poly Pizza](https://poly.pizza) (filter CC0), [Quaternius](https://quaternius.com), Smithsonian 3D, OpenGameArt CC0 packs. Reject Sketchfab Standard. Prefer CC-BY over CC-BY-NC.
 3. **Visually inspect** the mesh (living form vs specimen; not mechanical; textures OK; polycount reasonable).
 4. **Download GLB** (or export GLB from Blender after cleanup). Prefer idle pose; strip unused animations later if needed.
 5. **Optimize** when over ~2 MB: `gltfpack -i in.glb -o out.glb -cc` (install [meshoptimizer](https://github.com/zeux/meshoptimizer) separately). Target **&lt;8 MB**, ideally **&lt;200k triangles**.
@@ -63,6 +66,51 @@ pnpm assets:import -- \
 
 - **Blender**: authoring, retopo, material cleanup, GLB export.
 - **three.js / R3F**: already the runtime viewer (`AnimalViewer` + `useGLTF`). Do not rebuild animals in three.js primitives except temporary educational stand-ins.
+
+## Sketchfab catalogue (current meshes)
+
+Canonical records live in `content/assets/licenses.json` and each `content/species/<slug>.yaml` `threeD` block (creator, source URL, license, attribution). Filenames stay on the catalogue slug so `/models/<slug>.glb` does not break.
+
+| Species slug | Sketchfab title | Creator | License |
+| --- | --- | --- | --- |
+| african-elephant | ELEPHANT | Filcomet | CC-BY-NC |
+| american-bison | Bison | Anees Animates | CC-BY-NC |
+| axolotl | Axolotl | varin | CC-BY |
+| bald-eagle | Bald Eagle | ucdavisterc | CC-BY |
+| barn-owl | Common Barn Owl | Innovation Studio | CC-BY |
+| blue-whale | Blue Whale - Textured | Bohdan Lvov | CC-BY |
+| cheetah | Cheetah | hendrikReyneke | CC-BY |
+| clownfish | Clownfish | zixisun02 | CC-BY |
+| emperor-penguin | Emperor Penguin | David Wigforss | CC-BY-NC |
+| giant-pacific-octopus | octopus | s4dned | CC-BY |
+| giant-panda | Giant Panda | GentryHS EAST | CC-BY |
+| giant-squid | Squid | Chaitanya Krishnan | CC-BY |
+| giraffe | Giraffe | BlueMesh | CC-BY |
+| golden-poison-frog | Model 20 - Panamanian Golden Frog | DigitalLife3D | CC-BY-NC |
+| great-white-shark | Great White Shark | Sealife Fan 3 | CC-BY |
+| green-sea-turtle | Model 52A - Kemps Ridley Sea Turtle (no ID) | DigitalLife3D | CC-BY-NC |
+| grey-wolf | Grey Wolf Rebuilt | kenchoo | CC-BY |
+| hippopotamus | Hippopotamus Planet Zoo | jimmyho905 | CC-BY |
+| honey-bee | Honey bee | Cybertron B-127 | CC-BY |
+| king-cobra | King Cobra | Yanez Designs | CC-BY |
+| komodo-dragon | Komodo Dragon | all of life | CC-BY |
+| lion | Lion | kenchoo | CC-BY-NC-SA |
+| monarch-butterfly | Monarch Butterfly | victorberdugo1 | CC-BY |
+| peregrine-falcon | Peregrine Falcon In Flight | restore50 | CC-BY |
+| polar-bear | Polar Bear | kenchoo | CC-BY |
+| red-fox | Fox Idle | kenchoo | CC-BY-NC-ND |
+| saltwater-crocodile | Crocodile - animal | Brian Trepanier | CC-BY |
+| tiger | Tiger | Vavtrudner | CC-BY |
+| western-gorilla | Gorilla | planeta-elefante | CC-BY |
+| whale-shark | Model 99A - Whale Shark | DigitalLife3D | CC-BY-NC |
+
+`golden-poison-frog` uses a Panamanian golden frog mesh as a stand-in. `green-sea-turtle` uses a Kemp's Ridley mesh as a stand-in. `giant-squid` uses a generic squid mesh.
+
+Re-import from a local `public/models-to-sort/` staging folder (gitignored):
+
+```bash
+pnpm assets:import-sketchfab
+```
 
 ## Photography
 

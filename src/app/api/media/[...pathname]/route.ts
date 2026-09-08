@@ -27,8 +27,33 @@ function contentTypeFor(pathname: string, blobType?: string | null): string {
 
 /**
  * Streams curated photos and GLBs from private Vercel Blob.
- * Locally, models/ also falls back to public/models for offline viewer use.
+ * In development, local public/models wins so newly imported GLBs are visible
+ * before they are mirrored to Blob.
  */
+async function localModelResponse(
+  pathname: string,
+): Promise<NextResponse | null> {
+  if (!pathname.startsWith("models/")) {
+    return null;
+  }
+  const localPath = path.join(process.cwd(), "public", pathname);
+  try {
+    await access(localPath);
+    const info = await stat(localPath);
+    const stream = createReadStream(localPath);
+    return new NextResponse(stream as unknown as BodyInit, {
+      headers: {
+        "Cache-Control": "public, max-age=3600",
+        "Content-Type": contentTypeFor(pathname),
+        "Content-Length": String(info.size),
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  } catch {
+    return null;
+  }
+}
+
 export async function GET(
   _request: NextRequest,
   context: { params: Promise<{ pathname: string[] }> },
@@ -42,6 +67,13 @@ export async function GET(
     !ALLOWED_PREFIXES.some((prefix) => pathname.startsWith(prefix))
   ) {
     return NextResponse.json({ error: "Invalid pathname" }, { status: 400 });
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    const local = await localModelResponse(pathname);
+    if (local) {
+      return local;
+    }
   }
 
   try {
@@ -63,23 +95,9 @@ export async function GET(
     // Fall through to local models/ for development without Blob.
   }
 
-  if (pathname.startsWith("models/")) {
-    const localPath = path.join(process.cwd(), "public", pathname);
-    try {
-      await access(localPath);
-      const info = await stat(localPath);
-      const stream = createReadStream(localPath);
-      return new NextResponse(stream as unknown as BodyInit, {
-        headers: {
-          "Cache-Control": "public, max-age=3600",
-          "Content-Type": contentTypeFor(pathname),
-          "Content-Length": String(info.size),
-          "X-Content-Type-Options": "nosniff",
-        },
-      });
-    } catch {
-      // not found locally
-    }
+  const local = await localModelResponse(pathname);
+  if (local) {
+    return local;
   }
 
   return new NextResponse("Not found", { status: 404 });

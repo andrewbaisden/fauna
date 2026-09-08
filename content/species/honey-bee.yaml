@@ -133,13 +133,13 @@ media:
 threeD:
   - url: /models/honey-bee.glb
     format: GLB
-    fileSizeBytes: 1636
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 9212808
+    creator: Cybertron B-127
+    source: "https://skfb.ly/oT7Ax"
+    license: CC_BY
+    attribution: "\"Honey bee\" (https://skfb.ly/oT7Ax) by Cybertron B-127 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/99/Apis_mellifera_-_honey_bee.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/99/Apis_mellifera_-_honey_bee.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    notes: Sketchfab living-form mesh for the Fauna viewer.

@@ -142,13 +142,13 @@ media:
 threeD:
   - url: /models/grey-wolf.glb
     format: GLB
-    fileSizeBytes: 986712
-    creator: Quaternius
-    source: "https://poly.pizza/m/P1gU3Qkr9r"
-    license: CC0
-    attribution: "Quaternius, CC0 (via Poly Pizza)"
+    fileSizeBytes: 17957692
+    creator: kenchoo
+    source: "https://skfb.ly/oQZIM"
+    license: CC_BY
+    attribution: "\"Grey Wolf Rebuilt\" (https://skfb.ly/oQZIM) by kenchoo is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg"
-    notes: Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.
+    notes: Sketchfab living-form mesh for the Fauna viewer.

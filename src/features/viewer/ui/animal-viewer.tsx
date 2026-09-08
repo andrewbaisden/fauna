@@ -15,6 +15,8 @@ const AnimalViewerCanvas = dynamic(
   },
 );
 
+const VIEWER_IMAGE_SIZES = "(min-width: 80rem) 72rem, calc(100vw - 2rem)";
+
 interface Asset {
   url: string;
   attribution: string;
@@ -79,7 +81,7 @@ export function AnimalViewer({
               alt={poster.alt}
               fill
               className="object-cover"
-              sizes="100vw"
+              sizes={VIEWER_IMAGE_SIZES}
               priority
             />
           ) : null}
@@ -130,7 +132,7 @@ function Fallback({
             alt={poster.alt}
             fill
             className="object-cover"
-            sizes="100vw"
+            sizes={VIEWER_IMAGE_SIZES}
             priority
           />
         ) : null}

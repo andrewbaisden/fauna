@@ -17,7 +17,7 @@ export function SpeciesCard({ species }: { species: SpeciesCardData }) {
               alt={species.image.alt}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 33vw"
             />
           ) : (
             <div className="flex h-full items-center justify-center text-sm text-ink/50">

@@ -137,13 +137,13 @@ media:
 threeD:
   - url: /models/red-fox.glb
     format: GLB
-    fileSizeBytes: 960228
-    creator: Quaternius
-    source: "https://poly.pizza/m/Bc97C66HKi"
-    license: CC0
-    attribution: "Quaternius, CC0 (via Poly Pizza)"
+    fileSizeBytes: 5967296
+    creator: kenchoo
+    source: "https://skfb.ly/oRVHD"
+    license: CC_BY_NC_ND
+    attribution: "\"Fox Idle\" (https://skfb.ly/oRVHD) by kenchoo is licensed under CC Attribution-NonCommercial-NoDerivs (http://creativecommons.org/licenses/by-nc-nd/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.1.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg"
-    notes: Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.
+    notes: "Sketchfab mesh for the Fauna viewer. CC-BY-NC-ND: non-commercial hosting only; no derivatives."

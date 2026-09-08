@@ -17,11 +17,12 @@ test("visitor can search from home and open a species profile", async ({
   await expect(
     page.getByRole("heading", { name: "Explore species" }),
   ).toBeVisible();
-  await page
+  const elephant = page
     .getByRole("link", { name: /african elephant/i })
-    .first()
-    .click();
-  await expect(page).toHaveURL(/\/animals\/african-elephant/);
+    .first();
+  await expect(elephant).toBeVisible();
+  await elephant.click();
+  await page.waitForURL(/\/animals\/african-elephant/);
   await expect(
     page.getByRole("heading", { level: 1, name: "African elephant" }),
   ).toBeVisible();
@@ -60,15 +61,13 @@ test("surprise redirects into a profile", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });
 
-test("species without a 3D model still have a full profile", async ({
-  page,
-}) => {
+test("species profile includes a 3D viewer entry point", async ({ page }) => {
   await visit(page, "/animals/monarch-butterfly");
   await expect(
     page.getByRole("heading", { name: "Monarch butterfly" }),
   ).toBeVisible();
   await expect(
-    page.getByText(/No 3D model for Monarch butterfly/i),
+    page.getByRole("button", { name: "Load 3D model" }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Characteristics" }),

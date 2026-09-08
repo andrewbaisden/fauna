@@ -2,7 +2,7 @@
  * Fetches licensed Poly Pizza GLBs used by the catalogue.
  * Run after clone: pnpm assets:fetch
  */
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const MODELS = [
@@ -26,8 +26,23 @@ const MODELS = [
 async function main() {
   const dir = path.join(process.cwd(), "public/models");
   await mkdir(dir, { recursive: true });
+  const force = process.argv.includes("--force");
 
   for (const model of MODELS) {
+    const dest = path.join(dir, `${model.slug}.glb`);
+    if (!force) {
+      try {
+        const existing = await stat(dest);
+        if (existing.size > 50_000) {
+          console.info(
+            `skip ${model.slug} (${existing.size} bytes already present; pass --force to overwrite)`,
+          );
+          continue;
+        }
+      } catch {
+        // download
+      }
+    }
     const response = await fetch(model.url, {
       headers: { "User-Agent": "FaunaAssetFetch/1.0" },
     });
@@ -37,7 +52,6 @@ async function main() {
       );
     }
     const buffer = Buffer.from(await response.arrayBuffer());
-    const dest = path.join(dir, `${model.slug}.glb`);
     await writeFile(dest, buffer);
     console.info(`Wrote ${dest} (${buffer.length} bytes) from ${model.source}`);
   }

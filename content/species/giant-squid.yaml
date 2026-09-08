@@ -111,13 +111,13 @@ media:
 threeD:
   - url: /models/giant-squid.glb
     format: GLB
-    fileSizeBytes: 1800
-    creator: Fauna
-    source: Project-authored stylized educational mesh
-    license: CC0
-    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    fileSizeBytes: 13947572
+    creator: Chaitanya Krishnan
+    source: "https://skfb.ly/mlkj3gf10b"
+    license: CC_BY
+    attribution: "\"Squid\" (https://skfb.ly/mlkj3gf10b) by Chaitanya Krishnan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
     modified: false
-    version: "1.0.0"
+    version: "2.0.0"
     posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Giant_squid_Ranheim.jpg"
     fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Giant_squid_Ranheim.jpg"
-    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
+    notes: "Sketchfab mesh titled Squid, used as a living-form stand-in for giant squid."
