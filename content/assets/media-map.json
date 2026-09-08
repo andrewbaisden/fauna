@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Maps Wikimedia (or other source) media URLs to hosted URLs on Vercel Blob or /public/media. Seed applies this map so runtime never hotlinks Commons.",
+  "hosts": {}
+}

@@ -1,0 +1,112 @@
+slug: giant-panda
+commonName: Giant panda
+scientificName: Ailuropoda melanoleuca
+aliases: []
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: CATHEMERAL
+sizeCategory: LARGE
+featured: false
+summary: The giant panda is a bear specialised on bamboo in montane forests of China. A carnivoran
+  gut plus a ‘false thumb’ let it process a low-nutrient plant diet for most of the day.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Ursidae
+    slug: ursidae
+  - rank: GENUS
+    scientificName: Ailuropoda
+    slug: ailuropoda
+  - rank: SPECIES
+    scientificName: Ailuropoda melanoleuca
+    slug: ailuropoda-melanoleuca
+habitats:
+  - slug: temperate-forest
+    name: Temperate forest
+    description: Cool montane bamboo forest in a few mountain ranges of south-central China.
+regions:
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: cub
+    name: Cub
+    sortOrder: 0
+    description: Altricial and tiny at birth relative to the mother; dens in tree hollows or caves.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Mostly solitary except during a short mating season; days are dominated by feeding.
+adaptations:
+  - title: Radial sesamoid ‘thumb’
+    explanation: An enlarged wrist bone opposes the paw and helps grasp bamboo culms — a feeding tool,
+      not a true digit.
+behaviours:
+  - category: FEEDING
+    summary: Eats tens of kilograms of bamboo daily; still an occasional scavenger or predator.
+  - category: SOCIAL
+    summary: Scent marks advertise occupancy; ranges overlap more than in many solitary carnivores.
+conservation:
+  status: VU
+  populationTrend: INCREASING
+  yearAssessed: 2016
+  threats:
+    - Habitat fragmentation
+    - Bamboo flowering cycles
+  sourceUrl: https://www.iucnredlist.org/species/712/121745669
+  sourceKey: iucn-giant-panda
+measurements:
+  - type: BODY_MASS
+    minValue: 70
+    maxValue: 125
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-giant-panda
+  - type: LENGTH
+    minValue: 1.2
+    maxValue: 1.8
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-giant-panda
+  - type: LIFESPAN
+    minValue: 15
+    maxValue: 20
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-giant-panda
+sources:
+  - key: iucn-giant-panda
+    title: Ailuropoda melanoleuca. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/712/121745669
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-giant-panda
+    title: Ailuropoda melanoleuca on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG
+    alt: Giant panda at Ocean Park Hong Kong
+    creator: J. Patrick Fischer
+    license: CC_BY_SA
+    attribution: J. Patrick Fischer, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Grosser_Panda.JPG

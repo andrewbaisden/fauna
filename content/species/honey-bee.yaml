@@ -1,0 +1,132 @@
+slug: honey-bee
+commonName: Western honey bee
+scientificName: Apis mellifera
+aliases: []
+animalGroup: INVERTEBRATE
+diet: NECTARIVORE
+activityPattern: DIURNAL
+sizeCategory: TINY
+featured: false
+summary: The western honey bee is a eusocial insect managed worldwide for honey and crop
+  pollination. Wild and feral colonies still exist, but parasites and landscape change affect
+  health. This is not a native-everywhere species; humans moved it globally.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Arthropoda
+    slug: arthropoda
+  - rank: CLASS
+    scientificName: Insecta
+    slug: insecta
+  - rank: ORDER
+    scientificName: Hymenoptera
+    slug: hymenoptera
+  - rank: FAMILY
+    scientificName: Apidae
+    slug: apidae
+  - rank: GENUS
+    scientificName: Apis
+    slug: apis
+  - rank: SPECIES
+    scientificName: Apis mellifera
+    slug: apis-mellifera
+habitats:
+  - slug: grassland
+    name: Grassland and meadow
+    description: Flower-rich landscapes supplying nectar and pollen.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: europe
+    name: Europe
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: INTRODUCED
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    description: Laid in wax cells by the queen.
+  - slug: larva
+    name: Larva
+    sortOrder: 1
+    description: Fed royal jelly then pollen and honey depending on caste.
+  - slug: pupa
+    name: Pupa
+    sortOrder: 2
+    description: Metamorphoses inside a capped cell.
+  - slug: adult
+    name: Adult
+    sortOrder: 3
+    description: Workers, drones and a queen with strongly different roles.
+adaptations:
+  - title: Waggle dance
+    explanation: Returning foragers encode direction and distance to resources, a rare example of
+      symbolic communication in insects.
+behaviours:
+  - category: SOCIAL
+    summary: Colony is a superorganism with division of labour and overlapping generations.
+conservation:
+  status: DD
+  populationTrend: UNKNOWN
+  yearAssessed: 2019
+  threats:
+    - Parasites
+    - Pesticides
+    - Floral scarcity
+  sourceUrl: https://www.iucnredlist.org/species/42463611/42463671
+  sourceKey: iucn-honey-bee
+measurements:
+  - type: LENGTH
+    minValue: 0.01
+    maxValue: 0.02
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-honey-bee
+  - type: BODY_MASS
+    typicalValue: 0.0001
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-honey-bee
+  - type: LIFESPAN
+    minValue: 0.04
+    maxValue: 0.15
+    unit: YEAR
+    qualifier: TYPICAL
+    notes: Workers in summer live weeks; queens live years.
+    sourceKey: adw-honey-bee
+sources:
+  - key: iucn-honey-bee
+    title: Apis mellifera. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/42463611/42463671
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-honey-bee
+    title: Apis mellifera on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/9/99/Apis_mellifera_-_honey_bee.jpg
+    alt: Western honey bee on a flower
+    creator: Sam Fraser-Smith
+    license: CC_BY
+    attribution: Sam Fraser-Smith, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Apis_mellifera_-_honey_bee.jpg

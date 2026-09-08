@@ -1,0 +1,116 @@
+slug: great-white-shark
+commonName: Great white shark
+scientificName: Carcharodon carcharias
+aliases: []
+animalGroup: FISH
+diet: CARNIVORE
+activityPattern: CATHEMERAL
+sizeCategory: VERY_LARGE
+featured: true
+summary: The great white shark is a wide-ranging lamnid predator of marine mammals, fishes and
+  scavenged whales. It is fully aquatic and regional endothermy supports bursts of high performance
+  in cool water.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Chondrichthyes
+    slug: chondrichthyes
+  - rank: ORDER
+    scientificName: Lamniformes
+    slug: lamniformes
+  - rank: FAMILY
+    scientificName: Lamnidae
+    slug: lamnidae
+  - rank: GENUS
+    scientificName: Carcharodon
+    slug: carcharodon
+  - rank: SPECIES
+    scientificName: Carcharodon carcharias
+    slug: carcharodon-carcharias
+habitats:
+  - slug: marine
+    name: Marine
+    description: Coastal and offshore temperate to subtropical seas.
+regions:
+  - slug: global-ocean
+    name: Global ocean
+    type: OCEAN
+    rangeType: NATIVE
+lifeStages:
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 0
+    description: Feeds more on fishes; uses nursery areas in some regions.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Takes larger prey including pinnipeds where available.
+adaptations:
+  - title: Regional endothermy
+    explanation: Vascular heat exchangers keep swimming muscles warmer than ambient water, supporting
+      sustained cruising.
+behaviours:
+  - category: FEEDING
+    summary: Ambush from below is documented at some seal colonies; diet is broader than that stereotype.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2018
+  threats:
+    - Bycatch
+    - Direct fishing
+  sourceUrl: https://www.iucnredlist.org/species/3855/2878674
+  sourceKey: iucn-great-white-shark
+measurements:
+  - type: LENGTH
+    minValue: 4
+    maxValue: 6
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-great-white-shark
+  - type: BODY_MASS
+    minValue: 680
+    maxValue: 1100
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-great-white-shark
+  - type: TOP_SPEED
+    typicalValue: 56
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-great-white-shark
+  - type: LIFESPAN
+    minValue: 30
+    maxValue: 70
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-great-white-shark
+sources:
+  - key: iucn-great-white-shark
+    title: Carcharodon carcharias. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/3855/2878674
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-great-white-shark
+    title: Carcharodon carcharias on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg
+    alt: Great white shark swimming near the surface
+    creator: Terry Goss
+    license: CC_BY_SA
+    attribution: Terry Goss, Wikimedia Commons, CC BY_SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:White_shark.jpg

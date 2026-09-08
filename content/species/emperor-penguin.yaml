@@ -1,0 +1,113 @@
+slug: emperor-penguin
+commonName: Emperor penguin
+scientificName: Aptenodytes forsteri
+aliases: []
+animalGroup: BIRD
+diet: CARNIVORE
+activityPattern: CATHEMERAL
+sizeCategory: MEDIUM
+featured: true
+summary: The emperor penguin breeds on Antarctic sea ice in winter. Males incubate the single egg on
+  their feet while fasting through storms; chicks later form crèches.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Aves
+    slug: aves
+  - rank: ORDER
+    scientificName: Sphenisciformes
+    slug: sphenisciformes
+  - rank: FAMILY
+    scientificName: Spheniscidae
+    slug: spheniscidae
+  - rank: GENUS
+    scientificName: Aptenodytes
+    slug: aptenodytes
+  - rank: SPECIES
+    scientificName: Aptenodytes forsteri
+    slug: aptenodytes-forsteri
+habitats:
+  - slug: sea-ice
+    name: Sea ice
+    description: Fast ice used for colonies; foraging occurs in polar seas.
+regions:
+  - slug: antarctica
+    name: Antarctica
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    description: Incubated on the parent's feet under a brood pouch.
+  - slug: chick
+    name: Chick
+    sortOrder: 1
+    description: Downy chick fed regurgitated food; joins a crèche.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Walks long distances between colony and foraging leads.
+adaptations:
+  - title: Huddling and insulation
+    explanation: Dense plumage, fat and coordinated huddles reduce heat loss during Antarctic winter breeding.
+behaviours:
+  - category: PARENTAL
+    summary: Biparental care with a long male incubation fast.
+conservation:
+  status: NT
+  populationTrend: DECREASING
+  yearAssessed: 2019
+  threats:
+    - Sea-ice change
+    - Prey shifts
+  sourceUrl: https://www.iucnredlist.org/species/22697752/157658053
+  sourceKey: iucn-emperor-penguin
+measurements:
+  - type: HEIGHT
+    minValue: 1.1
+    maxValue: 1.3
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-emperor-penguin
+  - type: BODY_MASS
+    minValue: 22
+    maxValue: 45
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-emperor-penguin
+  - type: LIFESPAN
+    minValue: 15
+    maxValue: 20
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-emperor-penguin
+sources:
+  - key: iucn-emperor-penguin
+    title: Aptenodytes forsteri. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22697752/157658053
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-emperor-penguin
+    title: Aptenodytes forsteri on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/a/a3/Aptenodytes_forsteri_-Snow_Hill_Island%2C_Antarctica_-adults_and_juvenile-8.jpg
+    alt: Two adult emperor penguins with a juvenile on Snow Hill Island, Antarctica
+    creator: Ian Duffy
+    license: CC_BY
+    attribution: Ian Duffy, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Aptenodytes_forsteri_-Snow_Hill_Island,_Antarctica_-adults_and_juvenile-8.jpg

@@ -1,0 +1,115 @@
+slug: american-bison
+commonName: American bison
+scientificName: Bison bison
+aliases: []
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: VERY_LARGE
+featured: false
+summary: The American bison is a grazing bovid of North American grasslands. Near extinction in the
+  nineteenth century was followed by recovery in protected herds; most animals today live under some
+  management.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Artiodactyla
+    slug: artiodactyla
+  - rank: FAMILY
+    scientificName: Bovidae
+    slug: bovidae
+  - rank: GENUS
+    scientificName: Bison
+    slug: bison
+  - rank: SPECIES
+    scientificName: Bison bison
+    slug: bison-bison
+habitats:
+  - slug: grassland
+    name: Grassland
+    description: Prairies and parklands where grazing maintains open structure.
+regions:
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: calf
+    name: Calf
+    sortOrder: 0
+    description: Born in spring; follows the mother within hours.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Lives in mixed herds; bulls compete during the rut.
+adaptations:
+  - title: Massive forequarters
+    explanation: A heavy head and shoulder hump help sweep snow aside to reach winter forage.
+behaviours:
+  - category: SOCIAL
+    summary: Gregarious grazer; herd size varies with season and management.
+conservation:
+  status: NT
+  populationTrend: STABLE
+  yearAssessed: 2017
+  threats:
+    - Habitat loss
+    - Genetic introgression from cattle
+  sourceUrl: https://www.iucnredlist.org/species/2815/123789863
+  sourceKey: iucn-american-bison
+measurements:
+  - type: BODY_MASS
+    minValue: 400
+    maxValue: 1000
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-american-bison
+  - type: HEIGHT
+    minValue: 1.5
+    maxValue: 1.9
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-american-bison
+  - type: TOP_SPEED
+    typicalValue: 55
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-american-bison
+  - type: LIFESPAN
+    minValue: 15
+    maxValue: 25
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-american-bison
+sources:
+  - key: iucn-american-bison
+    title: Bison bison. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/2815/123789863
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-american-bison
+    title: Bison bison on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/8/8d/American_bison_k5680-1.jpg
+    alt: American bison standing in grassland
+    creator: Jack Dykinga
+    license: PUBLIC_DOMAIN
+    attribution: Jack Dykinga, Wikimedia Commons, PUBLIC DOMAIN
+    sourceUrl: https://commons.wikimedia.org/wiki/File:American_bison_k5680-1.jpg

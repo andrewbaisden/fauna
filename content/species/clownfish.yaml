@@ -1,0 +1,113 @@
+slug: clownfish
+commonName: Ocellaris clownfish
+scientificName: Amphiprion ocellaris
+aliases: []
+animalGroup: FISH
+diet: OMNIVORE
+activityPattern: DIURNAL
+sizeCategory: TINY
+featured: false
+summary: "The ocellaris clownfish lives among sea anemones on coral reefs. It is a sequential
+  hermaphrodite: the largest fish in a group is typically female."
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Actinopterygii
+    slug: actinopterygii
+  - rank: ORDER
+    scientificName: Ovalentaria
+    slug: ovalentaria
+  - rank: FAMILY
+    scientificName: Pomacentridae
+    slug: pomacentridae
+  - rank: GENUS
+    scientificName: Amphiprion
+    slug: amphiprion
+  - rank: SPECIES
+    scientificName: Amphiprion ocellaris
+    slug: amphiprion-ocellaris
+habitats:
+  - slug: coral-reef
+    name: Coral reef
+    description: Shallow tropical reefs with host anemones.
+regions:
+  - slug: indian-ocean
+    name: Indian Ocean
+    type: OCEAN
+    rangeType: NATIVE
+  - slug: pacific-ocean
+    name: Pacific Ocean
+    type: OCEAN
+    rangeType: NATIVE
+lifeStages:
+  - slug: larva
+    name: Larva
+    sortOrder: 0
+    description: Pelagic larvae before settling to a reef.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Lives in a size-based social queue around an anemone.
+adaptations:
+  - title: Anemone mucus coat
+    explanation: A protective mucus layer reduces firing of host nematocysts, allowing the fish to
+      shelter among tentacles.
+behaviours:
+  - category: SOCIAL
+    summary: Size-dominant hierarchy; if the female disappears, a breeding male may change sex.
+conservation:
+  status: LC
+  populationTrend: UNKNOWN
+  yearAssessed: 2021
+  threats:
+    - Reef degradation
+    - Aquarium harvest in some areas
+  sourceUrl: https://www.iucnredlist.org/species/188331/1856696
+  sourceKey: iucn-clownfish
+measurements:
+  - type: LENGTH
+    minValue: 0.08
+    maxValue: 0.11
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-clownfish
+  - type: BODY_MASS
+    typicalValue: 0.02
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-clownfish
+  - type: LIFESPAN
+    minValue: 6
+    maxValue: 10
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-clownfish
+sources:
+  - key: iucn-clownfish
+    title: Amphiprion ocellaris. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/188331/1856696
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-clownfish
+    title: Amphiprion ocellaris on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/a/ad/Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg
+    alt: Ocellaris clownfish among anemone tentacles
+    creator: Nick Hobgood
+    license: CC_BY_SA
+    attribution: Nick Hobgood, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Amphiprion_ocellaris_(Clown_anemonefish)_by_Nick_Hobgood.jpg

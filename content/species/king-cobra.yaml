@@ -1,0 +1,113 @@
+slug: king-cobra
+commonName: King cobra
+scientificName: Ophiophagus hannah
+aliases: []
+animalGroup: REPTILE
+diet: CARNIVORE
+activityPattern: DIURNAL
+sizeCategory: LARGE
+featured: false
+summary: The king cobra is the longest venomous snake, a forest elapid of South and Southeast Asia
+  that specialises on other snakes. It is not a true cobra (Naja) despite the hood display.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Reptilia
+    slug: reptilia
+  - rank: ORDER
+    scientificName: Squamata
+    slug: squamata
+  - rank: FAMILY
+    scientificName: Elapidae
+    slug: elapidae
+  - rank: GENUS
+    scientificName: Ophiophagus
+    slug: ophiophagus
+  - rank: SPECIES
+    scientificName: Ophiophagus hannah
+    slug: ophiophagus-hannah
+habitats:
+  - slug: tropical-forest
+    name: Tropical forest
+    description: Lowland and hill forest with dense cover and abundant snake prey.
+regions:
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: hatchling
+    name: Hatchling
+    sortOrder: 0
+    description: Independent from hatching; venomous from the first meal of small snakes.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Females may guard a nest of vegetation; adults are largely solitary.
+adaptations:
+  - title: Ophiophagous diet
+    explanation: A skull and venom suited to subduing other snakes, including other elapids, reduce
+      competition with generalist predators.
+behaviours:
+  - category: FEEDING
+    summary: Primarily eats snakes; lizards and rodents are occasional.
+  - category: REPRODUCTIVE
+    summary: Builds and may attend a nest of leaf litter — unusual among snakes.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2011
+  threats:
+    - Habitat loss
+    - Persecution
+    - Collection
+  sourceUrl: https://www.iucnredlist.org/species/177540/148142882
+  sourceKey: iucn-king-cobra
+measurements:
+  - type: LENGTH
+    minValue: 3
+    maxValue: 5.5
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-king-cobra
+  - type: BODY_MASS
+    minValue: 5
+    maxValue: 12
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-king-cobra
+  - type: LIFESPAN
+    minValue: 15
+    maxValue: 20
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-king-cobra
+sources:
+  - key: iucn-king-cobra
+    title: Ophiophagus hannah. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/177540/148142882
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-king-cobra
+    title: Ophiophagus hannah on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/6/6d/Ophiophagus_hannah.jpg
+    alt: King cobra with hood spread
+    creator: TimVickers
+    license: PUBLIC_DOMAIN
+    attribution: TimVickers, Wikimedia Commons, PUBLIC DOMAIN
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Ophiophagus_hannah.jpg

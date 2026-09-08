@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  quality:
+    name: Quality gates
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: fauna
+          POSTGRES_PASSWORD: fauna
+          POSTGRES_DB: fauna
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fauna -d fauna"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://fauna:fauna@localhost:5432/fauna?schema=public
+      BETTER_AUTH_SECRET: ci-secret-at-least-32-characters-long
+      BETTER_AUTH_URL: http://127.0.0.1:3000
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Generate Prisma Client
+        run: pnpm db:generate
+      - name: Biome
+        run: pnpm lint
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit and component tests
+        run: pnpm test
+      - name: Migrate and seed
+        run: pnpm db:migrate:deploy && pnpm db:seed
+      - name: Build
+        run: pnpm build
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: End-to-end tests
+        run: pnpm test:e2e
+        env:
+          CI: "true"

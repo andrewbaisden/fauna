@@ -1,0 +1,117 @@
+slug: giraffe
+commonName: Giraffe
+scientificName: Giraffa camelopardalis
+aliases: []
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: VERY_LARGE
+featured: false
+summary: The giraffe is the tallest living terrestrial animal. A long neck and specialised
+  circulation let it browse acacia canopies that shorter herbivores cannot reach. Taxonomy of
+  giraffe lineages is actively revised; this profile follows a conservative single-species treatment
+  used in many checklists.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Artiodactyla
+    slug: artiodactyla
+  - rank: FAMILY
+    scientificName: Giraffidae
+    slug: giraffidae
+  - rank: GENUS
+    scientificName: Giraffa
+    slug: giraffa
+  - rank: SPECIES
+    scientificName: Giraffa camelopardalis
+    slug: giraffa-camelopardalis
+habitats:
+  - slug: savanna
+    name: Savanna
+    description: Wooded grassland with browse trees.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: calf
+    name: Calf
+    sortOrder: 0
+    description: Precocial; stands soon after birth and joins crèches in some populations.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Browsing adults; males compete with necking displays.
+adaptations:
+  - title: Long neck and high blood pressure
+    explanation: A powerful heart and specialised valves help maintain brain blood flow despite the
+      vertical distance from heart to head.
+behaviours:
+  - category: FEEDING
+    summary: Selective browser on leaves, flowers and fruits of tall trees.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2016
+  threats:
+    - Habitat loss
+    - Poaching
+  sourceUrl: https://www.iucnredlist.org/species/9194/136266699
+  sourceKey: iucn-giraffe
+measurements:
+  - type: HEIGHT
+    minValue: 4.3
+    maxValue: 5.7
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-giraffe
+  - type: BODY_MASS
+    minValue: 800
+    maxValue: 1200
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-giraffe
+  - type: TOP_SPEED
+    typicalValue: 55
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-giraffe
+  - type: LIFESPAN
+    minValue: 20
+    maxValue: 28
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-giraffe
+sources:
+  - key: iucn-giraffe
+    title: Giraffa camelopardalis. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/9194/136266699
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-giraffe
+    title: Giraffa camelopardalis on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/3f/South_African_giraffe_%28Giraffa_camelopardalis_giraffa%29_head_with_oxpecker_Kruger.jpg
+    alt: South African giraffe head with oxpecker in Kruger National Park
+    creator: Charles J. Sharp
+    license: CC_BY_SA
+    attribution: Charles J. Sharp, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:South_African_giraffe_(Giraffa_camelopardalis_giraffa)_head_with_oxpecker_Kruger.jpg

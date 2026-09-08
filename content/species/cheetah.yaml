@@ -1,0 +1,120 @@
+slug: cheetah
+commonName: Cheetah
+scientificName: Acinonyx jubatus
+aliases: []
+animalGroup: MAMMAL
+diet: CARNIVORE
+activityPattern: DIURNAL
+sizeCategory: MEDIUM
+featured: true
+summary: The cheetah is a lightly built felid specialised for short, high-speed chases in open
+  habitat. Low genetic diversity and habitat fragmentation constrain many populations.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Felidae
+    slug: felidae
+  - rank: GENUS
+    scientificName: Acinonyx
+    slug: acinonyx
+  - rank: SPECIES
+    scientificName: Acinonyx jubatus
+    slug: acinonyx-jubatus
+habitats:
+  - slug: savanna
+    name: Savanna
+    description: Open grassland and woodland edges that allow long visual chases.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: cub
+    name: Cub
+    sortOrder: 0
+    description: Mantle fur may provide camouflage; cub mortality is high.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Females are usually solitary with cubs; males may form coalitions.
+adaptations:
+  - title: Flexible spine and long limbs
+    explanation: A highly flexible lumbar spine increases stride length during a sprint, trading
+      climbing power for acceleration.
+behaviours:
+  - category: FEEDING
+    summary: Diurnal hunter of small to medium ungulates; kills are often lost to larger carnivores.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2021
+  threats:
+    - Habitat loss
+    - Conflict
+    - Illegal trade
+  sourceUrl: https://www.iucnredlist.org/species/219/124366642
+  sourceKey: iucn-cheetah
+measurements:
+  - type: BODY_MASS
+    minValue: 21
+    maxValue: 72
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-cheetah
+  - type: LENGTH
+    minValue: 1.1
+    maxValue: 1.5
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-cheetah
+  - type: TOP_SPEED
+    typicalValue: 103
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-cheetah
+  - type: LIFESPAN
+    minValue: 8
+    maxValue: 12
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-cheetah
+sources:
+  - key: iucn-cheetah
+    title: Acinonyx jubatus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/219/124366642
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-cheetah
+    title: Acinonyx jubatus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/36/Cheetah_%28Acinonyx_jubatus%29_female_2.jpg
+    alt: Female cheetah lying in grass at Phinda Private Game Reserve
+    creator: Charles J. Sharp
+    license: CC_BY_SA
+    attribution: Charles J. Sharp, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Cheetah_(Acinonyx_jubatus)_female_2.jpg

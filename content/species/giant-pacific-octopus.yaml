@@ -1,0 +1,128 @@
+slug: giant-pacific-octopus
+commonName: Giant Pacific octopus
+scientificName: Enteroctopus dofleini
+aliases: [North Pacific giant octopus]
+animalGroup: INVERTEBRATE
+diet: CARNIVORE
+activityPattern: NOCTURNAL
+sizeCategory: LARGE
+featured: true
+summary: >
+  The giant Pacific octopus is a cold-water cephalopod with a relatively short
+  adult life and a terminal reproductive event. It can change skin colour and
+  texture for camouflage, and it uses a parrot-like beak to feed on crustaceans,
+  molluscs and fishes.
+taxonomy:
+  - { rank: KINGDOM, scientificName: Animalia, slug: animalia, gbifKey: 1 }
+  - { rank: PHYLUM, scientificName: Mollusca, slug: mollusca, gbifKey: 52 }
+  - { rank: CLASS, scientificName: Cephalopoda, slug: cephalopoda, gbifKey: 204 }
+  - { rank: ORDER, scientificName: Octopoda, slug: octopoda, gbifKey: 1143 }
+  - { rank: FAMILY, scientificName: Enteroctopodidae, slug: enteroctopodidae, gbifKey: 7904 }
+  - { rank: GENUS, scientificName: Enteroctopus, slug: enteroctopus, gbifKey: 2289460 }
+  - { rank: SPECIES, scientificName: Enteroctopus dofleini, slug: enteroctopus-dofleini, gbifKey: 2289463 }
+habitats:
+  - slug: marine
+    name: Marine
+    description: Temperate North Pacific waters from the intertidal to substantial depths.
+  - slug: rocky-reef
+    name: Rocky reef and den habitat
+    description: Crevices and dens used for resting, feeding and egg-brooding.
+regions:
+  - { slug: north-pacific, name: North Pacific, type: OCEAN, rangeType: NATIVE }
+  - { slug: north-america, name: North America, type: CONTINENT, rangeType: NATIVE, notes: Pacific coast from California to Alaska, plus the northwest Pacific. }
+  - { slug: asia, name: Asia, type: CONTINENT, rangeType: NATIVE }
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    ageMax: 0.6
+    ageUnit: YEAR
+    description: Females attach strings of eggs in a den and brood them, typically without feeding, until hatching.
+  - slug: paralarva
+    name: Paralarva
+    sortOrder: 1
+    ageMax: 0.3
+    ageUnit: YEAR
+    description: Newly hatched animals are planktonic before settling to the benthos.
+    physicalTraits: Transparent-to-translucent body, developing arms.
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 2
+    ageMax: 2
+    ageUnit: YEAR
+    description: Bottom-living animals that occupy dens and grow rapidly in cold, productive waters.
+  - slug: adult
+    name: Adult
+    sortOrder: 3
+    ageMin: 2
+    ageMax: 5
+    ageUnit: YEAR
+    description: Semelparous adults. After mating, the female broods eggs and usually dies around hatching; males also decline after reproduction.
+    socialRole: Solitary except for mating.
+adaptations:
+  - title: Dynamic camouflage
+    bodySystem: Skin
+    explanation: >
+      Chromatophores, iridophores and papillae let the octopus match colour and
+      texture of rock or kelp in seconds, which is central to both hunting and
+      avoiding vertebrates with sharp vision.
+  - title: Distributed nervous system
+    bodySystem: Nervous system
+    explanation: >
+      A large fraction of neurons sit in the arms. Arms can execute local grasping
+      and exploration while the central brain coordinates hunting and den use.
+behaviours:
+  - category: FEEDING
+    summary: Ambush and speculative foraging; prey is pulled into the web and bitten with a beak.
+  - category: PARENTAL
+    summary: Females ventilate and guard eggs for months and typically do not resume feeding.
+  - category: SOCIAL
+    summary: Largely solitary; interactions are mainly mating or den disputes.
+conservation:
+  status: LC
+  populationTrend: UNKNOWN
+  yearAssessed: 2014
+  threats:
+    - Localised harvest
+    - Benthic habitat disturbance
+  efforts: Fisheries management varies by region; global status remains least concern in published assessments.
+  sourceKey: iucn-octopus
+measurements:
+  - { type: BODY_MASS, minValue: 15, maxValue: 50, unit: KG, qualifier: ADULT, notes: Exceptional individuals can exceed this range., sourceKey: adw-octopus }
+  - { type: LENGTH, minValue: 3, maxValue: 5, unit: M, qualifier: ADULT, notes: Arm span, not body length alone., sourceKey: adw-octopus }
+  - { type: LIFESPAN, minValue: 3, maxValue: 5, unit: YEAR, qualifier: TYPICAL, notes: Short for an animal of this size; tied to a single reproductive event., sourceKey: anage-octopus }
+sources:
+  - key: iucn-octopus
+    title: Enteroctopus dofleini. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/162619/930338
+    publisher: IUCN
+    accessedAt: "2026-09-08"
+    roles: [CONSERVATION]
+  - key: adw-octopus
+    title: Enteroctopus dofleini giant Pacific octopus
+    url: https://animaldiversity.org/accounts/Enteroctopus_dofleini/
+    publisher: Animal Diversity Web
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT, TEXT]
+  - key: anage-octopus
+    title: AnAge entry for Enteroctopus dofleini
+    url: https://genomics.senescence.info/species/entry.php?species=Enteroctopus_dofleini
+    publisher: AnAge
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT]
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/33/Octopus3.jpg
+    alt: Octopus among rocks (aquarium photograph used as a cephalopod visual reference)
+    creator: Albert Kok
+    license: CC_BY_SA
+    attribution: Albert Kok, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Octopus3.jpg
+rangeGeometry:
+  confidence: LOW
+  sourceKey: iucn-octopus
+  notes: Simplified North Pacific polygon. Not a bathymetric distribution map.
+  geojson:
+    type: Polygon
+    coordinates:
+      - [[140, 35], [230, 35], [230, 62], [140, 62], [140, 35]]

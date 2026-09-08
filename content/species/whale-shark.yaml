@@ -1,0 +1,111 @@
+slug: whale-shark
+commonName: Whale shark
+scientificName: Rhincodon typus
+aliases: []
+animalGroup: FISH
+diet: FILTER_FEEDER
+activityPattern: DIURNAL
+sizeCategory: VERY_LARGE
+featured: false
+summary: The whale shark is the largest living fish. It filter-feeds on plankton and small fishes
+  and is highly migratory. Despite its size it is not a hunter of large prey.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Chondrichthyes
+    slug: chondrichthyes
+  - rank: ORDER
+    scientificName: Orectolobiformes
+    slug: orectolobiformes
+  - rank: FAMILY
+    scientificName: Rhincodontidae
+    slug: rhincodontidae
+  - rank: GENUS
+    scientificName: Rhincodon
+    slug: rhincodon
+  - rank: SPECIES
+    scientificName: Rhincodon typus
+    slug: rhincodon-typus
+habitats:
+  - slug: marine
+    name: Marine
+    description: Tropical and warm-temperate surface waters.
+regions:
+  - slug: tropical-oceans
+    name: Tropical oceans
+    type: OCEAN
+    rangeType: NATIVE
+lifeStages:
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 0
+    description: Poorly known early life; neonates are rarely observed.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Aggregates at seasonal feeding sites rich in plankton.
+adaptations:
+  - title: Gill raker filter
+    explanation: Modified gill rakers strain tiny prey from huge volumes of water as the shark ram- or
+      suction-feeds.
+behaviours:
+  - category: FEEDING
+    summary: Filter feeding at the surface or in the water column; not a mammalian predator.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2016
+  threats:
+    - Bycatch
+    - Vessel strikes
+    - Directed fisheries
+  sourceUrl: https://www.iucnredlist.org/species/19488/2365291
+  sourceKey: iucn-whale-shark
+measurements:
+  - type: LENGTH
+    minValue: 8
+    maxValue: 12
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-whale-shark
+  - type: BODY_MASS
+    minValue: 9000
+    maxValue: 20000
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-whale-shark
+  - type: LIFESPAN
+    minValue: 70
+    maxValue: 100
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-whale-shark
+sources:
+  - key: iucn-whale-shark
+    title: Rhincodon typus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/19488/2365291
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-whale-shark
+    title: Rhincodon typus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/f/f1/Whale_shark_Georgia_aquarium.jpg
+    alt: Whale shark swimming in an aquarium exhibit
+    creator: Zac Wolf
+    license: CC_BY_SA
+    attribution: Zac Wolf, Wikimedia Commons, CC BY_SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Whale_shark_Georgia_aquarium.jpg

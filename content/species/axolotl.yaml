@@ -1,0 +1,116 @@
+slug: axolotl
+commonName: Axolotl
+scientificName: Ambystoma mexicanum
+aliases: []
+animalGroup: AMPHIBIAN
+diet: CARNIVORE
+activityPattern: NOCTURNAL
+sizeCategory: SMALL
+featured: true
+summary: The axolotl is a paedomorphic salamander that typically retains larval features into
+  adulthood. Wild populations are confined to remnant waters of the Mexico City basin and are
+  critically endangered.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Amphibia
+    slug: amphibia
+  - rank: ORDER
+    scientificName: Urodela
+    slug: urodela
+  - rank: FAMILY
+    scientificName: Ambystomatidae
+    slug: ambystomatidae
+  - rank: GENUS
+    scientificName: Ambystoma
+    slug: ambystoma
+  - rank: SPECIES
+    scientificName: Ambystoma mexicanum
+    slug: ambystoma-mexicanum
+habitats:
+  - slug: freshwater
+    name: Freshwater
+    description: High-altitude lakes and canals with aquatic vegetation.
+regions:
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    description: Laid in water among plants.
+  - slug: larva
+    name: Larva
+    sortOrder: 1
+    description: Aquatic, gilled; this morphology is usually retained.
+  - slug: adult
+    name: Paedomorphic adult
+    sortOrder: 2
+    description: Sexually mature without a full terrestrial metamorphosis in most individuals.
+adaptations:
+  - title: Regeneration
+    explanation: Can regenerate limbs, gills and some internal tissues, making it a model for
+      developmental biology.
+behaviours:
+  - category: FEEDING
+    summary: Sucks in aquatic invertebrates and small vertebrates by rapid mouth expansion.
+conservation:
+  status: CR
+  populationTrend: DECREASING
+  yearAssessed: 2019
+  threats:
+    - Habitat drainage
+    - Pollution
+    - Invasive fish
+  sourceUrl: https://www.iucnredlist.org/species/1095/139744672
+  sourceKey: iucn-axolotl
+measurements:
+  - type: LENGTH
+    minValue: 0.15
+    maxValue: 0.3
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-axolotl
+  - type: BODY_MASS
+    minValue: 0.06
+    maxValue: 0.12
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-axolotl
+  - type: LIFESPAN
+    minValue: 10
+    maxValue: 15
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-axolotl
+sources:
+  - key: iucn-axolotl
+    title: Ambystoma mexicanum. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/1095/139744672
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-axolotl
+    title: Ambystoma mexicanum on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/6/6b/Ambystoma_mexicanum_1.jpg
+    alt: Axolotl at the Steinhart Aquarium in San Francisco
+    creator: Stan Shebs
+    license: CC_BY_SA
+    attribution: Stan Shebs, Wikimedia Commons, CC BY_SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Ambystoma_mexicanum_1.jpg

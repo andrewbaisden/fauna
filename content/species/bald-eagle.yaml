@@ -1,0 +1,113 @@
+slug: bald-eagle
+commonName: Bald eagle
+scientificName: Haliaeetus leucocephalus
+aliases: []
+animalGroup: BIRD
+diet: CARNIVORE
+activityPattern: DIURNAL
+sizeCategory: MEDIUM
+featured: true
+summary: The bald eagle is a fish-eating sea eagle of North America. Recovery after DDT restrictions
+  is a well-documented conservation case, though local threats remain.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Aves
+    slug: aves
+  - rank: ORDER
+    scientificName: Accipitriformes
+    slug: accipitriformes
+  - rank: FAMILY
+    scientificName: Accipitridae
+    slug: accipitridae
+  - rank: GENUS
+    scientificName: Haliaeetus
+    slug: haliaeetus
+  - rank: SPECIES
+    scientificName: Haliaeetus leucocephalus
+    slug: haliaeetus-leucocephalus
+habitats:
+  - slug: wetlands
+    name: Wetlands and coasts
+    description: Lakes, rivers and coasts with fish and tall nest trees.
+regions:
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: nestling
+    name: Nestling
+    sortOrder: 0
+    description: Raised in bulky stick nests, often reused for years.
+  - slug: immature
+    name: Immature
+    sortOrder: 1
+    description: Mottled plumage for several years before the white head appears.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Territorial pairs defend nest areas near water.
+adaptations:
+  - title: Fish-catching talons
+    explanation: Rough foot pads and sharp talons help seize slippery fish near the surface.
+behaviours:
+  - category: FEEDING
+    summary: Takes fish, waterbirds and carrion; piracy from other birds is common.
+conservation:
+  status: LC
+  populationTrend: INCREASING
+  yearAssessed: 2016
+  threats:
+    - Lead poisoning
+    - Collisions
+  sourceUrl: https://www.iucnredlist.org/species/22695144/93491570
+  sourceKey: iucn-bald-eagle
+measurements:
+  - type: BODY_MASS
+    minValue: 3
+    maxValue: 6.3
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-bald-eagle
+  - type: WINGSPAN
+    minValue: 1.8
+    maxValue: 2.3
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-bald-eagle
+  - type: LIFESPAN
+    minValue: 15
+    maxValue: 28
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-bald-eagle
+sources:
+  - key: iucn-bald-eagle
+    title: Haliaeetus leucocephalus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22695144/93491570
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-bald-eagle
+    title: Haliaeetus leucocephalus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/7/73/Haliaeetus_leucocephalus-flight-USFWS.jpg
+    alt: Bald eagle in flight
+    creator: Steve Hillebrand, USFWS
+    license: PUBLIC_DOMAIN
+    attribution: Steve Hillebrand, USFWS, PUBLIC DOMAIN
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Haliaeetus_leucocephalus-flight-USFWS.jpg

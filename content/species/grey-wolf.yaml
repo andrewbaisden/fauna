@@ -1,0 +1,154 @@
+slug: grey-wolf
+commonName: Grey wolf
+scientificName: Canis lupus
+aliases:
+  - Gray wolf
+animalGroup: MAMMAL
+diet: CARNIVORE
+activityPattern: CREPUSCULAR
+sizeCategory: MEDIUM
+featured: false
+summary: The grey wolf is a wide-ranging canid that hunts in packs where prey and snow conditions
+  favour cooperation. Subspecies and dog domestication make the taxonomy historically contested;
+  Fauna treats the wild wolf as Canis lupus.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Canidae
+    slug: canidae
+  - rank: GENUS
+    scientificName: Canis
+    slug: canis
+  - rank: SPECIES
+    scientificName: Canis lupus
+    slug: canis-lupus
+habitats:
+  - slug: temperate-forest
+    name: Temperate forest
+    description: Seasonal forests and woodland used by ungulate prey.
+  - slug: tundra
+    name: Tundra
+    description: Open northern landscapes used by some wolf populations.
+regions:
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: europe
+    name: Europe
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: pup
+    name: Pup
+    sortOrder: 0
+    description: Born in dens; provisioned by the pack.
+  - slug: yearling
+    name: Yearling
+    sortOrder: 1
+    description: Learns hunting routes and may disperse.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Breeding is usually limited to a dominant pair in a pack.
+adaptations:
+  - title: Endurance gait
+    explanation: Long legs and a cursorial body plan support covering large home ranges in search of
+      ungulate prey.
+behaviours:
+  - category: SOCIAL
+    summary: Packs are typically family groups; size tracks prey size and habitat.
+  - category: COMMUNICATION
+    summary: Howls, scent marks and body language coordinate spacing and reunions.
+conservation:
+  status: LC
+  populationTrend: STABLE
+  yearAssessed: 2018
+  threats:
+    - Persecution
+    - Habitat fragmentation
+  sourceUrl: https://www.iucnredlist.org/species/3746/163508960
+  sourceKey: iucn-grey-wolf
+measurements:
+  - type: BODY_MASS
+    minValue: 23
+    maxValue: 55
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-grey-wolf
+  - type: LENGTH
+    minValue: 1
+    maxValue: 1.6
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-grey-wolf
+  - type: TOP_SPEED
+    typicalValue: 64
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-grey-wolf
+  - type: LIFESPAN
+    minValue: 6
+    maxValue: 13
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-grey-wolf
+sources:
+  - key: iucn-grey-wolf
+    title: Canis lupus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/3746/163508960
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-grey-wolf
+    title: Canis lupus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
+    alt: Grey wolf standing in snow
+    creator: Bernard Landgraf
+    license: CC_BY_SA
+    attribution: Bernard Landgraf, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Canis_lupus.jpg
+  - kind: POSTER
+    url: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
+    alt: Grey wolf standing in snow
+    creator: Bernard Landgraf
+    license: CC_BY_SA
+    attribution: Bernard Landgraf, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Canis_lupus.jpg
+threeD:
+  - url: /models/grey-wolf.glb
+    format: GLB
+    fileSizeBytes: 986712
+    creator: Quaternius
+    source: https://poly.pizza/m/P1gU3Qkr9r
+    license: CC0
+    attribution: Quaternius, CC0 (via Poly Pizza)
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
+    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
+    notes: Low-poly stylized educational mesh from Quaternius Animated Animal Pack. Not a photogrammetric scan.

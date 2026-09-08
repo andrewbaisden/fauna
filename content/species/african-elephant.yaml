@@ -1,0 +1,173 @@
+slug: african-elephant
+commonName: African elephant
+scientificName: Loxodonta africana
+aliases:
+  - African bush elephant
+  - African savanna elephant
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: VERY_LARGE
+featured: true
+summary: >
+  The African elephant is the largest living land mammal. Adults use their trunk
+  for feeding, drinking, social contact and dust-bathing, and their large ears
+  help dump heat in open, sunlit habitats. Family groups are led by experienced
+  females and may travel long distances between water, forage and shade.
+taxonomy:
+  - { rank: KINGDOM, scientificName: Animalia, slug: animalia, gbifKey: 1 }
+  - { rank: PHYLUM, scientificName: Chordata, slug: chordata, gbifKey: 44 }
+  - { rank: CLASS, scientificName: Mammalia, slug: mammalia, gbifKey: 359 }
+  - { rank: ORDER, scientificName: Proboscidea, slug: proboscidea, gbifKey: 786 }
+  - { rank: FAMILY, scientificName: Elephantidae, slug: elephantidae, gbifKey: 5314 }
+  - { rank: GENUS, scientificName: Loxodonta, slug: loxodonta, gbifKey: 2440905 }
+  - { rank: SPECIES, scientificName: Loxodonta africana, slug: loxodonta-africana, gbifKey: 5219226 }
+habitats:
+  - slug: savanna
+    name: Savanna
+    description: Open woodland and grassland mosaics with seasonal water and browse.
+    notes: Frequently associated with mixed savanna and woodland edges.
+  - slug: woodland
+    name: Woodland
+    description: Tree-dominated landscapes that still allow large herbivores to move and feed.
+regions:
+  - { slug: africa, name: Africa, type: CONTINENT, rangeType: NATIVE }
+  - { slug: southern-africa, name: Southern Africa, type: BIOGEOGRAPHIC, rangeType: NATIVE }
+  - { slug: eastern-africa, name: Eastern Africa, type: BIOGEOGRAPHIC, rangeType: NATIVE }
+lifeStages:
+  - slug: calf
+    name: Calf
+    sortOrder: 0
+    ageMin: 0
+    ageMax: 4
+    ageUnit: YEAR
+    description: Calves stay close to the natal family and rely on milk while learning routes to water and forage.
+    physicalTraits: Sparse body hair, relatively large head, developing tusks later in this stage.
+    socialRole: Protected by the mother and allomothers in the family group.
+    dietNotes: Milk, then increasing amounts of vegetation.
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 1
+    ageMin: 4
+    ageMax: 12
+    ageUnit: YEAR
+    description: Independently feeding but still socially dependent on the family, especially during drought.
+    physicalTraits: Growing tusks and increasing shoulder height.
+    socialRole: Plays, learns dominance and ranging behaviour from older females.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    ageMin: 12
+    ageMax: 60
+    ageUnit: YEAR
+    description: Sexually mature animals. Females typically remain with the family; males spend more time in bachelor groups or alone.
+    socialRole: Adult females may become matriarchs; adult males compete for mating opportunities.
+  - slug: older-adult
+    name: Older adult
+    sortOrder: 3
+    ageMin: 50
+    ageUnit: YEAR
+    description: Long-lived individuals can retain landscape knowledge that benefits the whole family during scarce seasons.
+    socialRole: Experienced matriarchs often lead group movement decisions.
+adaptations:
+  - title: Large, thin ears
+    bodySystem: Thermoregulation
+    explanation: >
+      Ear pinnae present a large surface rich in blood vessels. When an elephant
+      flaps its ears, warmed blood sheds heat into the air, which is especially
+      useful in hot, open habitats.
+    relatedMeasurementType: HEIGHT
+  - title: Trunk
+    bodySystem: Feeding and sensory system
+    explanation: >
+      The trunk is a fused nose and upper lip with extraordinary muscular control.
+      It lets the animal pluck grasses, strip bark, suck water and investigate
+      scents without kneeling.
+behaviours:
+  - category: SOCIAL
+    summary: Lives in multi-generational family groups centred on related females; males disperse as they mature.
+  - category: FEEDING
+    summary: Spends much of the day browsing and grazing; diet composition shifts with season and habitat.
+  - category: COMMUNICATION
+    summary: Uses rumbling vocalisations, body posture and chemical cues; some calls travel long distances.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2021
+  threats:
+    - Habitat loss and fragmentation
+    - Human–elephant conflict
+    - Illegal killing for ivory
+  efforts: >
+    Conservation depends on protected area networks, anti-poaching work, and
+    corridors that keep seasonal movements possible. Status is curated from
+    published IUCN assessments and should be re-checked against the source.
+  sourceKey: iucn-loxodonta-africana
+measurements:
+  - { type: BODY_MASS, minValue: 4000, maxValue: 6000, unit: KG, qualifier: ADULT, sex: ANY, notes: Typical adult range; large bulls can exceed this., sourceKey: adw-elephant }
+  - { type: HEIGHT, minValue: 2.5, maxValue: 4, unit: M, qualifier: ADULT, sourceKey: adw-elephant }
+  - { type: TOP_SPEED, typicalValue: 40, unit: KM_H, qualifier: MAXIMUM_RECORDED, notes: Short bursts, not a cruising speed., sourceKey: adw-elephant }
+  - { type: LIFESPAN, minValue: 60, maxValue: 70, unit: YEAR, qualifier: TYPICAL, sourceKey: anage-elephant }
+sources:
+  - key: iucn-loxodonta-africana
+    title: Loxodonta africana. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/181008073/181008073
+    publisher: IUCN
+    accessedAt: "2026-09-08"
+    license: Curated citation; not a live API feed
+    roles: [CONSERVATION]
+  - key: adw-elephant
+    title: Loxodonta africana African savanna elephant
+    url: https://animaldiversity.org/accounts/Loxodonta_africana/
+    publisher: Animal Diversity Web
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT, TEXT]
+  - key: anage-elephant
+    title: AnAge entry for Loxodonta africana
+    url: https://genomics.senescence.info/species/entry.php?species=Loxodonta_africana
+    publisher: AnAge
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT]
+  - key: gbif-elephant
+    title: GBIF Backbone Taxonomy — Loxodonta africana
+    url: https://www.gbif.org/species/5219226
+    publisher: GBIF
+    accessedAt: "2026-09-08"
+    roles: [TAXONOMY]
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    alt: African bush elephant walking through dry grassland
+    creator: Muhammad Mahdi Karim
+    license: CC_BY_SA
+    attribution: Muhammad Mahdi Karim, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:African_Bush_Elephant.jpg
+    width: 2048
+    height: 1536
+  - kind: POSTER
+    url: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    alt: Still image of an African elephant used when 3D is unavailable
+    creator: Muhammad Mahdi Karim
+    license: CC_BY_SA
+    attribution: Muhammad Mahdi Karim, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:African_Bush_Elephant.jpg
+threeD:
+  - url: /models/african-elephant.glb
+    format: GLB
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal.
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
+    notes: Stylized stand-in used to prove the viewer pipeline until a licensed living-form scan is sourced.
+rangeGeometry:
+  confidence: LOW
+  sourceKey: gbif-elephant
+  notes: Simplified illustrative polygon for Southern and Eastern Africa. This is not an IUCN range map.
+  geojson:
+    type: Polygon
+    coordinates:
+      - [[12, -28], [36, -28], [40, -5], [32, 8], [22, 12], [12, 4], [12, -28]]

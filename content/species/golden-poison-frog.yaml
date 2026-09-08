@@ -1,0 +1,113 @@
+slug: golden-poison-frog
+commonName: Golden poison frog
+scientificName: Phyllobates terribilis
+aliases: []
+animalGroup: AMPHIBIAN
+diet: INSECTIVORE
+activityPattern: DIURNAL
+sizeCategory: TINY
+featured: false
+summary: The golden poison frog is a diurnal dendrobatid of Colombian rainforest. Wild toxicity
+  comes from dietary alkaloids; captive-bred frogs lacking those prey are not comparably toxic.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Amphibia
+    slug: amphibia
+  - rank: ORDER
+    scientificName: Anura
+    slug: anura
+  - rank: FAMILY
+    scientificName: Dendrobatidae
+    slug: dendrobatidae
+  - rank: GENUS
+    scientificName: Phyllobates
+    slug: phyllobates
+  - rank: SPECIES
+    scientificName: Phyllobates terribilis
+    slug: phyllobates-terribilis
+habitats:
+  - slug: tropical-rainforest
+    name: Tropical rainforest
+    description: Humid forest floor and low vegetation on the Pacific coast of Colombia.
+regions:
+  - slug: south-america
+    name: South America
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    description: Terrestrial eggs; males often transport tadpoles to water.
+  - slug: tadpole
+    name: Tadpole
+    sortOrder: 1
+    description: Aquatic larva before metamorphosis.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Diurnal, territorial frog with aposematic colouration.
+adaptations:
+  - title: Dietary alkaloids
+    explanation: Batrachotoxins acquired from arthropod prey make wild frogs dangerous to handle; colour
+      advertises the defence.
+behaviours:
+  - category: PARENTAL
+    summary: Males typically carry tadpoles to small water bodies.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2017
+  threats:
+    - Habitat loss
+    - Illegal collection
+  sourceUrl: https://www.iucnredlist.org/species/55264/11266026
+  sourceKey: iucn-golden-poison-frog
+measurements:
+  - type: LENGTH
+    minValue: 0.045
+    maxValue: 0.055
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-golden-poison-frog
+  - type: BODY_MASS
+    typicalValue: 0.03
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-golden-poison-frog
+  - type: LIFESPAN
+    minValue: 5
+    maxValue: 10
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-golden-poison-frog
+sources:
+  - key: iucn-golden-poison-frog
+    title: Phyllobates terribilis. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/55264/11266026
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-golden-poison-frog
+    title: Phyllobates terribilis on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/6/6d/Phyllobates_terribilis.jpg
+    alt: Golden poison frog on a leaf
+    creator: Biodiego88
+    license: CC_BY
+    attribution: Biodiego88, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Phyllobates_terribilis.jpg

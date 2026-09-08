@@ -1,0 +1,559 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AnimalGroup {
+  MAMMAL
+  BIRD
+  REPTILE
+  AMPHIBIAN
+  FISH
+  INVERTEBRATE
+}
+
+enum DietType {
+  HERBIVORE
+  CARNIVORE
+  OMNIVORE
+  INSECTIVORE
+  FILTER_FEEDER
+  DETRITIVORE
+  NECTARIVORE
+  PISCIVORE
+  FRUGIVORE
+  SCAVENGER
+}
+
+enum ActivityPattern {
+  DIURNAL
+  NOCTURNAL
+  CREPUSCULAR
+  CATHEMERAL
+}
+
+enum SizeCategory {
+  TINY
+  SMALL
+  MEDIUM
+  LARGE
+  VERY_LARGE
+}
+
+enum ConservationStatus {
+  EX
+  EW
+  CR
+  EN
+  VU
+  NT
+  LC
+  DD
+  NE
+}
+
+enum PopulationTrend {
+  INCREASING
+  DECREASING
+  STABLE
+  UNKNOWN
+}
+
+enum TaxonomicRank {
+  KINGDOM
+  PHYLUM
+  CLASS
+  ORDER
+  FAMILY
+  GENUS
+  SPECIES
+  SUBSPECIES
+}
+
+enum MeasurementType {
+  BODY_MASS
+  HEIGHT
+  LENGTH
+  WINGSPAN
+  TOP_SPEED
+  LIFESPAN
+}
+
+enum CanonicalUnit {
+  KG
+  M
+  KM_H
+  YEAR
+}
+
+enum MeasurementQualifier {
+  ADULT
+  JUVENILE
+  NEONATE
+  TYPICAL
+  MAXIMUM_RECORDED
+  AVERAGE
+}
+
+enum Sex {
+  ANY
+  FEMALE
+  MALE
+}
+
+enum RangeType {
+  NATIVE
+  INTRODUCED
+  VAGRANT
+  MIGRATORY
+}
+
+enum BehaviourCategory {
+  SOCIAL
+  FEEDING
+  COMMUNICATION
+  MIGRATION
+  TERRITORIAL
+  REPRODUCTIVE
+  PARENTAL
+}
+
+enum MediaKind {
+  PHOTO
+  ILLUSTRATION
+  MAP_OVERLAY
+  THUMBNAIL
+  POSTER
+}
+
+enum AssetLicense {
+  CC0
+  CC_BY
+  CC_BY_SA
+  SMITHSONIAN_OA
+  PUBLIC_DOMAIN
+}
+
+enum RegionType {
+  CONTINENT
+  OCEAN
+  COUNTRY
+  BIOGEOGRAPHIC
+}
+
+enum UnitSystem {
+  METRIC
+  IMPERIAL
+}
+
+model Taxon {
+  id             String         @id @default(cuid())
+  slug           String         @unique
+  rank           TaxonomicRank
+  scientificName String
+  commonName     String?
+  gbifKey        Int?
+  parentId       String?
+  parent         Taxon?         @relation("TaxonTree", fields: [parentId], references: [id])
+  children       Taxon[]        @relation("TaxonTree")
+  species        Species[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([parentId])
+  @@index([rank])
+  @@index([scientificName])
+}
+
+model Species {
+  id               String               @id @default(cuid())
+  slug             String               @unique
+  commonName       String
+  scientificName   String               @unique
+  animalGroup      AnimalGroup
+  diet             DietType
+  activityPattern  ActivityPattern?
+  sizeCategory     SizeCategory
+  summary          String
+  featured         Boolean              @default(false)
+  taxonId          String
+  taxon            Taxon                @relation(fields: [taxonId], references: [id])
+  aliases          SpeciesAlias[]
+  habitats         SpeciesHabitat[]
+  regions          SpeciesRegion[]
+  lifeStages       LifeStage[]
+  adaptations      Adaptation[]
+  behaviours       Behaviour[]
+  conservation     ConservationRecord?
+  measurements     Measurement[]
+  sources          SpeciesSource[]
+  media            MediaAsset[]
+  threeDAssets     ThreeDAsset[]
+  rangeGeometries  RangeGeometry[]
+  favourites       Favourite[]
+  recentlyViewed   RecentlyViewed[]
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  @@index([animalGroup])
+  @@index([diet])
+  @@index([sizeCategory])
+  @@index([taxonId])
+  @@index([featured])
+  @@index([commonName])
+}
+
+model SpeciesAlias {
+  id        String   @id @default(cuid())
+  speciesId String
+  species   Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([speciesId, name])
+  @@index([name])
+}
+
+model Habitat {
+  id          String           @id @default(cuid())
+  slug        String           @unique
+  name        String
+  description String
+  species     SpeciesHabitat[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model SpeciesHabitat {
+  id        String   @id @default(cuid())
+  speciesId String
+  habitatId String
+  notes     String?
+  species   Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  habitat   Habitat  @relation(fields: [habitatId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([speciesId, habitatId])
+  @@index([habitatId])
+}
+
+model Region {
+  id        String          @id @default(cuid())
+  slug      String          @unique
+  name      String
+  type      RegionType
+  parentId  String?
+  parent    Region?         @relation("RegionTree", fields: [parentId], references: [id])
+  children  Region[]        @relation("RegionTree")
+  species   SpeciesRegion[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([parentId])
+  @@index([type])
+}
+
+model SpeciesRegion {
+  id        String    @id @default(cuid())
+  speciesId String
+  regionId  String
+  rangeType RangeType
+  notes     String?
+  species   Species   @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  region    Region    @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@unique([speciesId, regionId, rangeType])
+  @@index([regionId])
+}
+
+model LifeStage {
+  id               String   @id @default(cuid())
+  speciesId        String
+  species          Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  slug             String
+  name             String
+  sortOrder        Int
+  ageMin           Decimal? @db.Decimal(12, 4)
+  ageMax           Decimal? @db.Decimal(12, 4)
+  ageUnit          String?
+  description      String
+  physicalTraits   String?
+  behaviouralNotes String?
+  socialRole       String?
+  dietNotes        String?
+  extra            Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([speciesId, slug])
+  @@index([speciesId, sortOrder])
+}
+
+model Adaptation {
+  id                     String            @id @default(cuid())
+  speciesId              String
+  species                Species           @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  title                  String
+  bodySystem             String?
+  explanation            String
+  relatedMeasurementType MeasurementType?
+  createdAt              DateTime          @default(now())
+  updatedAt              DateTime          @updatedAt
+
+  @@index([speciesId])
+}
+
+model Behaviour {
+  id        String            @id @default(cuid())
+  speciesId String
+  species   Species           @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  category  BehaviourCategory
+  summary   String
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([speciesId])
+}
+
+model ConservationRecord {
+  id              String             @id @default(cuid())
+  speciesId       String             @unique
+  species         Species            @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  status          ConservationStatus
+  populationTrend PopulationTrend
+  yearAssessed    Int?
+  sourceId        String
+  source          Source             @relation(fields: [sourceId], references: [id])
+  efforts         String?
+  threats         Threat[]
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+}
+
+model Threat {
+  id                   String             @id @default(cuid())
+  conservationRecordId String
+  record               ConservationRecord @relation(fields: [conservationRecordId], references: [id], onDelete: Cascade)
+  label                String
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  @@index([conservationRecordId])
+}
+
+model Measurement {
+  id           String                @id @default(cuid())
+  speciesId    String
+  species      Species               @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  type         MeasurementType
+  minValue     Decimal?              @db.Decimal(16, 6)
+  maxValue     Decimal?              @db.Decimal(16, 6)
+  typicalValue Decimal?              @db.Decimal(16, 6)
+  unit         CanonicalUnit
+  qualifier    MeasurementQualifier
+  sex          Sex                   @default(ANY)
+  notes        String?
+  sourceId     String
+  source       Source                @relation(fields: [sourceId], references: [id])
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+
+  @@index([speciesId, type])
+}
+
+model Source {
+  id           String               @id @default(cuid())
+  key          String               @unique
+  title        String
+  url          String?
+  publisher    String?
+  accessedAt   DateTime
+  license      String?
+  measurements Measurement[]
+  conservation ConservationRecord[]
+  speciesLinks SpeciesSource[]
+  geometries   RangeGeometry[]
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+}
+
+model SpeciesSource {
+  id        String   @id @default(cuid())
+  speciesId String
+  sourceId  String
+  role      String
+  species   Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  source    Source   @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([speciesId, sourceId, role])
+  @@index([sourceId])
+}
+
+model MediaAsset {
+  id          String       @id @default(cuid())
+  speciesId   String?
+  species     Species?     @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  kind        MediaKind
+  url         String
+  alt         String
+  creator     String
+  license     AssetLicense
+  attribution String
+  sourceUrl   String
+  width       Int?
+  height      Int?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([speciesId])
+}
+
+model ThreeDAsset {
+  id               String       @id @default(cuid())
+  speciesId        String
+  species          Species      @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  url              String
+  format           String       @default("GLB")
+  polyCount        Int?
+  fileSizeBytes    Int?
+  creator          String
+  source           String
+  license          AssetLicense
+  attribution      String
+  modified         Boolean      @default(false)
+  version          String
+  posterImageUrl   String?
+  fallbackImageUrl String?
+  notes            String?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  @@index([speciesId])
+}
+
+model RangeGeometry {
+  id         String   @id @default(cuid())
+  speciesId  String
+  species    Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  geojson    Json
+  confidence String
+  sourceId   String
+  source     Source   @relation(fields: [sourceId], references: [id])
+  notes      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([speciesId])
+}
+
+model User {
+  id             String           @id
+  name           String
+  email          String
+  emailVerified  Boolean          @default(false)
+  image          String?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  sessions       Session[]
+  accounts       Account[]
+  favourites     Favourite[]
+  recentlyViewed RecentlyViewed[]
+  preference     UserPreference?
+
+  @@unique([email])
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+model Favourite {
+  id        String   @id @default(cuid())
+  userId    String
+  speciesId String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  species   Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, speciesId])
+  @@index([speciesId])
+}
+
+model RecentlyViewed {
+  id        String   @id @default(cuid())
+  userId    String
+  speciesId String
+  viewedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  species   Species  @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, speciesId])
+  @@index([userId, viewedAt])
+}
+
+model UserPreference {
+  id         String     @id @default(cuid())
+  userId     String     @unique
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  unitSystem UnitSystem @default(METRIC)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+}

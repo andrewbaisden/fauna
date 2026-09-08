@@ -1,0 +1,117 @@
+slug: western-gorilla
+commonName: Western gorilla
+scientificName: Gorilla gorilla
+aliases: []
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: LARGE
+featured: false
+summary: The western gorilla is a forest ape living in family groups led by a silverback. Fruit
+  availability strongly shapes ranging; Ebola, hunting and forest loss have driven steep declines.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Primates
+    slug: primates
+  - rank: FAMILY
+    scientificName: Hominidae
+    slug: hominidae
+  - rank: GENUS
+    scientificName: Gorilla
+    slug: gorilla
+  - rank: SPECIES
+    scientificName: Gorilla gorilla
+    slug: gorilla-gorilla
+habitats:
+  - slug: tropical-rainforest
+    name: Tropical rainforest
+    description: Dense equatorial forest with seasonal fruiting trees.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: infant
+    name: Infant
+    sortOrder: 0
+    description: Carried and nursed; weaning is gradual.
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 1
+    description: Plays within the group and samples adult foods.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Males may become silverbacks and hold groups; females transfer between groups.
+adaptations:
+  - title: Large gut for fibrous plants
+    explanation: A capacious digestive tract processes leaves and pith when fruit is scarce, supporting
+      a mostly herbivorous diet.
+behaviours:
+  - category: SOCIAL
+    summary: Cohesive groups with one dominant male and several females plus offspring.
+  - category: FEEDING
+    summary: Day ranges track fruit; fallback foods include leaves, pith and invertebrates occasionally.
+conservation:
+  status: CR
+  populationTrend: DECREASING
+  yearAssessed: 2016
+  threats:
+    - Hunting
+    - Disease
+    - Forest loss
+  sourceUrl: https://www.iucnredlist.org/species/9404/136250677
+  sourceKey: iucn-western-gorilla
+measurements:
+  - type: BODY_MASS
+    minValue: 70
+    maxValue: 180
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-western-gorilla
+  - type: HEIGHT
+    minValue: 1.4
+    maxValue: 1.8
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-western-gorilla
+  - type: LIFESPAN
+    minValue: 30
+    maxValue: 40
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-western-gorilla
+sources:
+  - key: iucn-western-gorilla
+    title: Gorilla gorilla. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/9404/136250677
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-western-gorilla
+    title: Gorilla gorilla on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/c/c3/Gorilla_Male_Global.jpg
+    alt: Western gorilla male specimen, multiple views
+    creator: Didier Descouens
+    license: CC_BY_SA
+    attribution: Didier Descouens, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Gorilla_Male_Global.jpg

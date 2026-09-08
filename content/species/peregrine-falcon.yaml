@@ -1,0 +1,131 @@
+slug: peregrine-falcon
+commonName: Peregrine falcon
+scientificName: Falco peregrinus
+aliases: [Peregrine]
+animalGroup: BIRD
+diet: CARNIVORE
+activityPattern: DIURNAL
+sizeCategory: SMALL
+featured: true
+summary: >
+  The peregrine falcon is a cosmopolitan bird of prey famous for high-speed
+  hunting stoops. Compact, pointed wings and a streamlined body reduce drag,
+  while a notched beak helps dispatch avian prey. Populations recovered in many
+  regions after organochlorine pesticides were restricted.
+taxonomy:
+  - { rank: KINGDOM, scientificName: Animalia, slug: animalia, gbifKey: 1 }
+  - { rank: PHYLUM, scientificName: Chordata, slug: chordata, gbifKey: 44 }
+  - { rank: CLASS, scientificName: Aves, slug: aves, gbifKey: 212 }
+  - { rank: ORDER, scientificName: Falconiformes, slug: falconiformes, gbifKey: 724 }
+  - { rank: FAMILY, scientificName: Falconidae, slug: falconidae, gbifKey: 5246 }
+  - { rank: GENUS, scientificName: Falco, slug: falco, gbifKey: 2481022 }
+  - { rank: SPECIES, scientificName: Falco peregrinus, slug: falco-peregrinus, gbifKey: 2481030 }
+habitats:
+  - slug: cliffs
+    name: Cliffs and open country
+    description: Steep nest sites paired with open airspace for hunting birds in flight.
+  - slug: urban
+    name: Urban
+    description: Cities provide ledges analogous to cliffs and abundant pigeon prey.
+regions:
+  - { slug: cosmopolitan, name: Cosmopolitan, type: BIOGEOGRAPHIC, rangeType: NATIVE, notes: One of the most widely distributed bird species. }
+  - { slug: north-america, name: North America, type: CONTINENT, rangeType: NATIVE }
+  - { slug: europe, name: Europe, type: CONTINENT, rangeType: NATIVE }
+  - { slug: africa, name: Africa, type: CONTINENT, rangeType: NATIVE }
+  - { slug: asia, name: Asia, type: CONTINENT, rangeType: NATIVE }
+  - { slug: oceania, name: Oceania, type: CONTINENT, rangeType: NATIVE }
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    ageMax: 0.1
+    ageUnit: YEAR
+    description: Clutches are typically laid on cliff ledges or tall structures; incubation is shared.
+  - slug: nestling
+    name: Nestling
+    sortOrder: 1
+    ageMax: 0.12
+    ageUnit: YEAR
+    description: Downy young remain at the nest and are fed dismembered birds by both parents.
+    physicalTraits: White down, then emerging juvenile contour feathers.
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 2
+    ageMax: 1
+    ageUnit: YEAR
+    description: Brown-streaked plumage. Hunting skill develops over months after fledging.
+  - slug: adult
+    name: Adult
+    sortOrder: 3
+    ageMin: 1
+    ageUnit: YEAR
+    description: Slate-grey upperparts and barred underparts in typical plumage; established pairs may reuse nest sites.
+adaptations:
+  - title: Streamlined body and pointed wings
+    bodySystem: Flight morphology
+    explanation: >
+      A compact torso and long, tapered wings reduce drag during a stoop, allowing
+      the bird to convert altitude into very high airspeed when intercepting prey.
+    relatedMeasurementType: TOP_SPEED
+  - title: Bony tubercles in the nostrils
+    bodySystem: Respiratory
+    explanation: >
+      Structures in the nares are thought to moderate airflow during extremely fast
+      dives, helping the bird breathe while the airspeed would otherwise be disruptive.
+behaviours:
+  - category: FEEDING
+    summary: Specialises in catching birds in flight, often from a high perch or soaring vantage.
+  - category: TERRITORIAL
+    summary: Pairs defend nest cliffs or urban nest sites during the breeding season.
+  - category: MIGRATION
+    summary: Some populations are sedentary; others make long-distance seasonal movements.
+conservation:
+  status: LC
+  populationTrend: INCREASING
+  yearAssessed: 2021
+  threats:
+    - Historical pesticide-related eggshell thinning
+    - Collisions with built structures
+  efforts: Legal protection and bans on certain pesticides supported a widely documented recovery.
+  sourceKey: iucn-peregrine
+measurements:
+  - { type: BODY_MASS, minValue: 0.33, maxValue: 1.5, unit: KG, qualifier: ADULT, notes: Strong sexual size dimorphism; females are larger., sourceKey: adw-peregrine }
+  - { type: LENGTH, minValue: 0.34, maxValue: 0.58, unit: M, qualifier: ADULT, sourceKey: adw-peregrine }
+  - { type: WINGSPAN, minValue: 0.74, maxValue: 1.2, unit: M, qualifier: ADULT, sourceKey: adw-peregrine }
+  - { type: TOP_SPEED, typicalValue: 320, unit: KM_H, qualifier: MAXIMUM_RECORDED, notes: Hunting stoop; not level-flight cruising speed., sourceKey: adw-peregrine }
+  - { type: LIFESPAN, minValue: 13, maxValue: 20, unit: YEAR, qualifier: TYPICAL, sourceKey: anage-peregrine }
+sources:
+  - key: iucn-peregrine
+    title: Falco peregrinus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22696460/205768556
+    publisher: IUCN
+    accessedAt: "2026-09-08"
+    roles: [CONSERVATION]
+  - key: adw-peregrine
+    title: Falco peregrinus peregrine falcon
+    url: https://animaldiversity.org/accounts/Falco_peregrinus/
+    publisher: Animal Diversity Web
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT, TEXT]
+  - key: anage-peregrine
+    title: AnAge entry for Falco peregrinus
+    url: https://genomics.senescence.info/species/entry.php?species=Falco_peregrinus
+    publisher: AnAge
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT]
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/1/1e/Peregrine_Falcon_in_flight.jpg
+    alt: Peregrine falcon in flight
+    creator: Kevin Cole
+    license: CC_BY
+    attribution: Kevin Cole, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Peregrine_Falcon_in_flight.jpg
+rangeGeometry:
+  confidence: LOW
+  sourceKey: iucn-peregrine
+  notes: Illustrative worldwide box only. The species is nearly cosmopolitan; this is not a precise range map.
+  geojson:
+    type: Polygon
+    coordinates:
+      - [[-170, -50], [180, -50], [180, 72], [-170, 72], [-170, -50]]

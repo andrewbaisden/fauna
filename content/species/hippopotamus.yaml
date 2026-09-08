@@ -1,0 +1,117 @@
+slug: hippopotamus
+commonName: Hippopotamus
+scientificName: Hippopotamus amphibius
+aliases: []
+animalGroup: MAMMAL
+diet: HERBIVORE
+activityPattern: NOCTURNAL
+sizeCategory: VERY_LARGE
+featured: false
+summary: The common hippopotamus is a large African ungulate that spends days in water and grazes on
+  land at night. Territorial males defend stretches of river; most feeding is terrestrial grass, not
+  aquatic plants.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Artiodactyla
+    slug: artiodactyla
+  - rank: FAMILY
+    scientificName: Hippopotamidae
+    slug: hippopotamidae
+  - rank: GENUS
+    scientificName: Hippopotamus
+    slug: hippopotamus
+  - rank: SPECIES
+    scientificName: Hippopotamus amphibius
+    slug: hippopotamus-amphibius
+habitats:
+  - slug: freshwater
+    name: Freshwater
+    description: Rivers, lakes and wetlands used as daytime refuges and social arenas.
+  - slug: savanna
+    name: Savanna
+    description: Floodplain grassland used for nocturnal grazing around water.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: calf
+    name: Calf
+    sortOrder: 0
+    description: Nurses underwater and on land; stays close to the mother in pods.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Males may hold river territories; females and young form groups.
+adaptations:
+  - title: Semi-aquatic body
+    explanation: Dense bone, high-set eyes and nostrils, and skin that needs moisture let hippos rest in
+      water while remaining alert.
+behaviours:
+  - category: FEEDING
+    summary: Leaves water at dusk to graze grasses, often several kilometres inland.
+  - category: SOCIAL
+    summary: Pods form in water; fights among males can be severe.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2016
+  threats:
+    - Habitat loss
+    - Unregulated hunting
+    - Drought
+  sourceUrl: https://www.iucnredlist.org/species/10103/18567364
+  sourceKey: iucn-hippopotamus
+measurements:
+  - type: BODY_MASS
+    minValue: 1300
+    maxValue: 1800
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-hippopotamus
+  - type: LENGTH
+    minValue: 2.9
+    maxValue: 5
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-hippopotamus
+  - type: LIFESPAN
+    minValue: 35
+    maxValue: 50
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-hippopotamus
+sources:
+  - key: iucn-hippopotamus
+    title: Hippopotamus amphibius. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/10103/18567364
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-hippopotamus
+    title: Hippopotamus amphibius on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/a/a3/Hippo_pod_edit.jpg
+    alt: Pod of hippopotamuses in the Luangwa Valley, Zambia
+    creator: Paul Maritz
+    license: CC_BY_SA
+    attribution: Paul Maritz, Wikimedia Commons, CC BY_SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Hippo_pod_edit.jpg

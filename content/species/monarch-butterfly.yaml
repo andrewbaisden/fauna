@@ -1,0 +1,123 @@
+slug: monarch-butterfly
+commonName: Monarch butterfly
+scientificName: Danaus plexippus
+aliases: [Monarch]
+animalGroup: INVERTEBRATE
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: TINY
+featured: true
+summary: >
+  The monarch is a milkweed specialist with a four-stage holometabolous life
+  cycle. In North America, successive generations fuel a long-distance autumn
+  migration to overwintering forests. Wing colour advertises chemical defences
+  sequestered from larval host plants.
+taxonomy:
+  - { rank: KINGDOM, scientificName: Animalia, slug: animalia, gbifKey: 1 }
+  - { rank: PHYLUM, scientificName: Arthropoda, slug: arthropoda, gbifKey: 54 }
+  - { rank: CLASS, scientificName: Insecta, slug: insecta, gbifKey: 216 }
+  - { rank: ORDER, scientificName: Lepidoptera, slug: lepidoptera, gbifKey: 797 }
+  - { rank: FAMILY, scientificName: Nymphalidae, slug: nymphalidae, gbifKey: 7016 }
+  - { rank: GENUS, scientificName: Danaus, slug: danaus, gbifKey: 1920469 }
+  - { rank: SPECIES, scientificName: Danaus plexippus, slug: danaus-plexippus, gbifKey: 1920476 }
+habitats:
+  - slug: grassland
+    name: Grassland and meadow
+    description: Open habitats with milkweed for larvae and nectar sources for adults.
+  - slug: forest
+    name: Forest
+    description: Oyamel fir and related montane forests used by overwintering clusters in Mexico.
+regions:
+  - { slug: north-america, name: North America, type: CONTINENT, rangeType: NATIVE }
+  - { slug: central-america, name: Central America, type: CONTINENT, rangeType: MIGRATORY }
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    ageMax: 0.02
+    ageUnit: YEAR
+    description: Pale eggs are laid singly on milkweed. This stage is measured in days, not years.
+  - slug: larva
+    name: Larva
+    sortOrder: 1
+    ageMax: 0.04
+    ageUnit: YEAR
+    description: The caterpillar feeds almost exclusively on milkweed, sequestering cardenolides.
+    physicalTraits: Banded body, fleshy filaments, rapid growth through instars.
+    dietNotes: Milkweed leaves.
+  - slug: pupa
+    name: Pupa
+    sortOrder: 2
+    ageMax: 0.04
+    ageUnit: YEAR
+    description: A jade-green chrysalis in which larval tissues are reorganised into the adult.
+  - slug: adult
+    name: Adult
+    sortOrder: 3
+    ageMax: 0.08
+    ageUnit: YEAR
+    description: Nectar-feeding butterfly. Migratory generation adults can live substantially longer than summer generations.
+    dietNotes: Flower nectar; does not eat milkweed leaves.
+adaptations:
+  - title: Chemical defence from milkweed
+    bodySystem: Toxicity
+    explanation: >
+      Larvae sequester cardenolides from host plants. The orange-and-black adult
+      pattern is widely interpreted as a warning signal to visually hunting predators.
+  - title: Migratory generation physiology
+    bodySystem: Life history
+    explanation: >
+      Autumn adults delay reproduction, build fat reserves and orient over long
+      distances — a different life-history strategy from summer generations.
+    relatedMeasurementType: LIFESPAN
+behaviours:
+  - category: FEEDING
+    summary: Larvae eat milkweed; adults take nectar and are important seasonal pollinators of garden and wild flowers.
+  - category: MIGRATION
+    summary: Eastern North American populations undertake a multi-generational round trip involving Mexican overwintering sites.
+  - category: REPRODUCTIVE
+    summary: Females search for milkweed and lay eggs singly; there is no parental care after oviposition.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2022
+  threats:
+    - Milkweed and nectar-plant loss
+    - Overwintering habitat degradation
+    - Pesticides
+  efforts: Habitat restoration along migratory pathways and protection of overwintering forests are the main levers.
+  sourceKey: iucn-monarch
+measurements:
+  - { type: BODY_MASS, typicalValue: 0.0005, unit: KG, qualifier: ADULT, notes: Approximate adult mass; individuals vary with fat load., sourceKey: adw-monarch }
+  - { type: LENGTH, typicalValue: 0.09, unit: M, qualifier: ADULT, notes: Forewing length is smaller; value is a typical wingspan-scale body length proxy., sourceKey: adw-monarch }
+  - { type: WINGSPAN, minValue: 0.089, maxValue: 0.102, unit: M, qualifier: ADULT, sourceKey: adw-monarch }
+  - { type: LIFESPAN, minValue: 0.05, maxValue: 0.7, unit: YEAR, qualifier: TYPICAL, notes: Summer adults live weeks; migratory adults may live several months., sourceKey: adw-monarch }
+sources:
+  - key: iucn-monarch
+    title: Danaus plexippus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/159971/200167070
+    publisher: IUCN
+    accessedAt: "2026-09-08"
+    roles: [CONSERVATION]
+  - key: adw-monarch
+    title: Danaus plexippus monarch
+    url: https://animaldiversity.org/accounts/Danaus_plexippus/
+    publisher: Animal Diversity Web
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT, TEXT]
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/6/63/Monarch_In_May.jpg
+    alt: Monarch butterfly on a flower in May
+    creator: Kenneth Dwain Harrelson
+    license: CC_BY_SA
+    attribution: Kenneth Dwain Harrelson, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Monarch_In_May.jpg
+rangeGeometry:
+  confidence: LOW
+  sourceKey: iucn-monarch
+  notes: Simplified North American migratory corridor, not roost-level data.
+  geojson:
+    type: Polygon
+    coordinates:
+      - [[-125, 15], [-70, 15], [-65, 50], [-125, 55], [-125, 15]]

@@ -1,0 +1,126 @@
+slug: polar-bear
+commonName: Polar bear
+scientificName: Ursus maritimus
+aliases: []
+animalGroup: MAMMAL
+diet: CARNIVORE
+activityPattern: CATHEMERAL
+sizeCategory: VERY_LARGE
+featured: true
+summary: The polar bear is a marine mammal of the Arctic sea-ice ecosystem. It hunts seals at
+  breathing holes and ice edges; sea-ice loss is the central conservation pressure.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Ursidae
+    slug: ursidae
+  - rank: GENUS
+    scientificName: Ursus
+    slug: ursus
+  - rank: SPECIES
+    scientificName: Ursus maritimus
+    slug: ursus-maritimus
+habitats:
+  - slug: sea-ice
+    name: Sea ice
+    description: Frozen marine habitat used for hunting seals and travelling.
+  - slug: tundra
+    name: Tundra
+    description: Coastal land used when ice is absent, often with reduced hunting success.
+regions:
+  - slug: arctic
+    name: Arctic
+    type: BIOGEOGRAPHIC
+    rangeType: NATIVE
+lifeStages:
+  - slug: cub
+    name: Cub
+    sortOrder: 0
+    description: Born in snow dens; twins are common; they stay with the mother for more than two years.
+  - slug: subadult
+    name: Subadult
+    sortOrder: 1
+    description: Independent but still learning to hunt on shifting ice.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Solitary except for mating and family groups of females with cubs.
+adaptations:
+  - title: Fur and fat insulation
+    explanation: Dense fur and a thick adipose layer reduce heat loss in water and wind. Dark skin
+      beneath translucent hair absorbs solar radiation.
+behaviours:
+  - category: FEEDING
+    summary: Primarily hunts ringed and bearded seals from sea ice.
+  - category: PARENTAL
+    summary: Females fast in dens while nursing cubs, then lead them onto the ice.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2015
+  threats:
+    - Sea-ice loss
+    - Pollution
+    - Human disturbance
+  sourceUrl: https://www.iucnredlist.org/species/22823/14871490
+  sourceKey: iucn-polar-bear
+measurements:
+  - type: BODY_MASS
+    minValue: 150
+    maxValue: 800
+    unit: KG
+    qualifier: ADULT
+    notes: Strong sexual dimorphism.
+    sourceKey: adw-polar-bear
+  - type: LENGTH
+    minValue: 2
+    maxValue: 3
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-polar-bear
+  - type: TOP_SPEED
+    typicalValue: 40
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-polar-bear
+  - type: LIFESPAN
+    minValue: 20
+    maxValue: 30
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-polar-bear
+sources:
+  - key: iucn-polar-bear
+    title: Ursus maritimus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22823/14871490
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-polar-bear
+    title: Ursus maritimus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/0/09/Polar_Bear_-_Alaska.jpg
+    alt: Polar bear walking on snow in Alaska
+    creator: Alan Wilson
+    license: CC_BY_SA
+    attribution: Alan Wilson, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Polar_Bear_-_Alaska.jpg

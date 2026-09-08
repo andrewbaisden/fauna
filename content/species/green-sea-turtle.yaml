@@ -1,0 +1,133 @@
+slug: green-sea-turtle
+commonName: Green sea turtle
+scientificName: Chelonia mydas
+aliases: [Green turtle]
+animalGroup: REPTILE
+diet: HERBIVORE
+activityPattern: DIURNAL
+sizeCategory: LARGE
+featured: true
+summary: >
+  The green sea turtle is a wide-ranging marine reptile. Adults in many
+  populations feed largely on seagrasses and algae, while juveniles are more
+  omnivorous. Females return to natal region beaches to nest, linking distant
+  foraging grounds with specific coastlines.
+taxonomy:
+  - { rank: KINGDOM, scientificName: Animalia, slug: animalia, gbifKey: 1 }
+  - { rank: PHYLUM, scientificName: Chordata, slug: chordata, gbifKey: 44 }
+  - { rank: CLASS, scientificName: Reptilia, slug: reptilia, gbifKey: 358 }
+  - { rank: ORDER, scientificName: Testudines, slug: testudines, gbifKey: 1142 }
+  - { rank: FAMILY, scientificName: Cheloniidae, slug: cheloniidae, gbifKey: 9630 }
+  - { rank: GENUS, scientificName: Chelonia, slug: chelonia, gbifKey: 2442167 }
+  - { rank: SPECIES, scientificName: Chelonia mydas, slug: chelonia-mydas, gbifKey: 2442170 }
+habitats:
+  - slug: marine
+    name: Marine
+    description: Open coastal and offshore waters used for migration and foraging.
+  - slug: seagrass
+    name: Seagrass meadow
+    description: Shallow vegetated marine habitats that provide forage for adults.
+  - slug: nesting-beach
+    name: Nesting beach
+    description: Sandy tropical and subtropical beaches used for egg laying.
+regions:
+  - { slug: tropical-oceans, name: Tropical and subtropical oceans, type: OCEAN, rangeType: NATIVE }
+  - { slug: atlantic-ocean, name: Atlantic Ocean, type: OCEAN, rangeType: NATIVE }
+  - { slug: pacific-ocean, name: Pacific Ocean, type: OCEAN, rangeType: NATIVE }
+  - { slug: indian-ocean, name: Indian Ocean, type: OCEAN, rangeType: NATIVE }
+lifeStages:
+  - slug: egg
+    name: Egg
+    sortOrder: 0
+    ageMax: 0.2
+    ageUnit: YEAR
+    description: Eggs incubate in a sandy nest. Temperature during incubation influences hatchling sex ratio.
+  - slug: hatchling
+    name: Hatchling
+    sortOrder: 1
+    ageMax: 0.1
+    ageUnit: YEAR
+    description: Hatchlings emerge together and crawl to the sea, then enter a largely pelagic early life.
+    physicalTraits: Dark carapace, small flippers, high predation risk at the tideline.
+  - slug: juvenile
+    name: Juvenile
+    sortOrder: 2
+    ageMax: 20
+    ageUnit: YEAR
+    description: Recruits into neritic foraging habitats; diet is typically more omnivorous than in adults.
+  - slug: adult
+    name: Adult
+    sortOrder: 3
+    ageMin: 20
+    ageUnit: YEAR
+    description: Sexually mature turtles migrate between foraging areas and nesting beaches, often over long distances.
+adaptations:
+  - title: Flippers instead of walking limbs
+    bodySystem: Locomotion
+    explanation: >
+      Forelimbs are modified as hydrofoils. In water they provide lift and thrust;
+      on land they are awkward, so nesting is a costly, brief terrestrial event.
+    relatedMeasurementType: LENGTH
+  - title: Salt glands
+    bodySystem: Osmoregulation
+    explanation: >
+      Specialised glands near the eyes excrete excess salt, allowing the turtle to
+      drink seawater and eat marine plants without dehydrating.
+behaviours:
+  - category: MIGRATION
+    summary: Adults may travel hundreds to thousands of kilometres between feeding grounds and nesting beaches.
+  - category: FEEDING
+    summary: Many adult populations graze seagrass and algae; this grazing can influence meadow structure.
+  - category: REPRODUCTIVE
+    summary: Females typically nest at night, laying multiple clutches in a season, then skip years between nesting.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2023
+  threats:
+    - Fisheries bycatch
+    - Harvest of eggs and turtles
+    - Coastal development on nesting beaches
+    - Climate-driven nest heating
+  efforts: Nest protection, bycatch reduction, and international trade controls are central conservation tools.
+  sourceKey: iucn-green-turtle
+measurements:
+  - { type: BODY_MASS, minValue: 110, maxValue: 190, unit: KG, qualifier: ADULT, sourceKey: adw-turtle }
+  - { type: LENGTH, minValue: 0.8, maxValue: 1.2, unit: M, qualifier: ADULT, notes: Straight carapace length, typical adults., sourceKey: adw-turtle }
+  - { type: TOP_SPEED, typicalValue: 35, unit: KM_H, qualifier: MAXIMUM_RECORDED, notes: Short swimming bursts; routine speeds are much lower., sourceKey: adw-turtle }
+  - { type: LIFESPAN, minValue: 60, maxValue: 80, unit: YEAR, qualifier: TYPICAL, sourceKey: anage-turtle }
+sources:
+  - key: iucn-green-turtle
+    title: Chelonia mydas. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/4615/247654386
+    publisher: IUCN
+    accessedAt: "2026-09-08"
+    roles: [CONSERVATION]
+  - key: adw-turtle
+    title: Chelonia mydas green sea turtle
+    url: https://animaldiversity.org/accounts/Chelonia_mydas/
+    publisher: Animal Diversity Web
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT, TEXT]
+  - key: anage-turtle
+    title: AnAge entry for Chelonia mydas
+    url: https://genomics.senescence.info/species/entry.php?species=Chelonia_mydas
+    publisher: AnAge
+    accessedAt: "2026-09-08"
+    roles: [MEASUREMENT]
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/b/bb/Hawaii_turtle_2.JPG
+    alt: Green sea turtle swimming over a Hawaiian reef
+    creator: Brocken Inaglory
+    license: CC_BY_SA
+    attribution: Brocken Inaglory, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Hawaii_turtle_2.JPG
+rangeGeometry:
+  confidence: LOW
+  sourceKey: iucn-green-turtle
+  notes: Simplified tropical ocean belt. Not a nesting-beach inventory or IUCN spatial layer.
+  geojson:
+    type: Polygon
+    coordinates:
+      - [[-180, -30], [180, -30], [180, 35], [-180, 35], [-180, -30]]

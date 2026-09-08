@@ -1,0 +1,149 @@
+slug: red-fox
+commonName: Red fox
+scientificName: Vulpes vulpes
+aliases: []
+animalGroup: MAMMAL
+diet: OMNIVORE
+activityPattern: NOCTURNAL
+sizeCategory: SMALL
+featured: false
+summary: The red fox is a highly adaptable canid occupying wild, rural and urban landscapes across
+  the Northern Hemisphere. Diet is opportunistic rather than strictly carnivorous.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Canidae
+    slug: canidae
+  - rank: GENUS
+    scientificName: Vulpes
+    slug: vulpes
+  - rank: SPECIES
+    scientificName: Vulpes vulpes
+    slug: vulpes-vulpes
+habitats:
+  - slug: temperate-forest
+    name: Temperate forest
+    description: Woodland and edge habitats with small mammals and fruit.
+  - slug: urban
+    name: Urban
+    description: Cities and suburbs where refuse and rodents supplement wild prey.
+regions:
+  - slug: europe
+    name: Europe
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: north-america
+    name: North America
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: australia
+    name: Australia
+    type: CONTINENT
+    rangeType: INTRODUCED
+lifeStages:
+  - slug: kit
+    name: Kit
+    sortOrder: 0
+    description: Born in dens; both parents may provision.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Territorial pairs or small family groups depending on resources.
+adaptations:
+  - title: Hearing for hidden prey
+    explanation: Sensitive hearing helps locate small mammals under snow or vegetation before a pouncing strike.
+behaviours:
+  - category: FEEDING
+    summary: Eats rodents, birds, invertebrates, fruit and scavenged food.
+conservation:
+  status: LC
+  populationTrend: STABLE
+  yearAssessed: 2016
+  threats:
+    - Local persecution
+    - Vehicle collisions
+  sourceUrl: https://www.iucnredlist.org/species/23062/46190249
+  sourceKey: iucn-red-fox
+measurements:
+  - type: BODY_MASS
+    minValue: 3
+    maxValue: 11
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-red-fox
+  - type: LENGTH
+    minValue: 0.45
+    maxValue: 0.9
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-red-fox
+  - type: TOP_SPEED
+    typicalValue: 50
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-red-fox
+  - type: LIFESPAN
+    minValue: 2
+    maxValue: 6
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-red-fox
+sources:
+  - key: iucn-red-fox
+    title: Vulpes vulpes. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/23062/46190249
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-red-fox
+    title: Vulpes vulpes on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg
+    alt: Alaska red fox standing in grass
+    creator: Gregory Smith
+    license: CC_BY_SA
+    attribution: 'Gregory "Slobirdr" Smith, Wikimedia Commons, CC BY-SA'
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Alaska_Red_Fox_(Vulpes_vulpes).jpg
+  - kind: POSTER
+    url: https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg
+    alt: Alaska red fox standing in grass
+    creator: Gregory Smith
+    license: CC_BY_SA
+    attribution: 'Gregory "Slobirdr" Smith, Wikimedia Commons, CC BY-SA'
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Alaska_Red_Fox_(Vulpes_vulpes).jpg
+threeD:
+  - url: /models/red-fox.glb
+    format: GLB
+    fileSizeBytes: 960512
+    creator: Quaternius
+    source: https://poly.pizza/m/Bc97C66HKi
+    license: CC0
+    attribution: Quaternius, CC0 (via Poly Pizza)
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg
+    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg
+    notes: Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.

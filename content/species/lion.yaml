@@ -1,0 +1,127 @@
+slug: lion
+commonName: Lion
+scientificName: Panthera leo
+aliases: []
+animalGroup: MAMMAL
+diet: CARNIVORE
+activityPattern: CREPUSCULAR
+sizeCategory: LARGE
+featured: true
+summary: The lion is a social big cat of African savannas and a remnant population in India.
+  Cooperative hunting and pride structure vary with prey and habitat; males are not universally the
+  sole hunters.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Felidae
+    slug: felidae
+  - rank: GENUS
+    scientificName: Panthera
+    slug: panthera
+  - rank: SPECIES
+    scientificName: Panthera leo
+    slug: panthera-leo
+habitats:
+  - slug: savanna
+    name: Savanna
+    description: Open woodland and grassland mosaics used by large herbivores and their predators.
+regions:
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: cub
+    name: Cub
+    sortOrder: 0
+    description: Dependent on the pride; high early mortality from infanticide and starvation.
+  - slug: subadult
+    name: Subadult
+    sortOrder: 1
+    description: Young males often disperse; young females may remain.
+  - slug: adult
+    name: Adult
+    sortOrder: 2
+    description: Breeding adults live in prides or nomadic coalitions depending on sex and density.
+adaptations:
+  - title: Cooperative hunting
+    explanation: Group hunts can improve success on large prey, though lions also hunt alone. Social
+      hunting is an ecological tactic, not a video-game combo.
+behaviours:
+  - category: SOCIAL
+    summary: Prides are typically related females plus associated males.
+  - category: FEEDING
+    summary: Takes medium to large ungulates; scavenging is common.
+conservation:
+  status: VU
+  populationTrend: DECREASING
+  yearAssessed: 2015
+  threats:
+    - Prey depletion
+    - Human–lion conflict
+    - Habitat fragmentation
+  sourceUrl: https://www.iucnredlist.org/species/15951/115130419
+  sourceKey: iucn-lion
+measurements:
+  - type: BODY_MASS
+    minValue: 120
+    maxValue: 250
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-lion
+  - type: LENGTH
+    minValue: 1.4
+    maxValue: 2.5
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-lion
+  - type: TOP_SPEED
+    typicalValue: 80
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-lion
+  - type: LIFESPAN
+    minValue: 10
+    maxValue: 16
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-lion
+sources:
+  - key: iucn-lion
+    title: Panthera leo. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/15951/115130419
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-lion
+    title: Panthera leo on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg
+    alt: Lion lying in dry grass in Namibia
+    creator: Kevin Pluck
+    license: CC_BY
+    attribution: Kevin Pluck, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Lion_waiting_in_Namibia.jpg

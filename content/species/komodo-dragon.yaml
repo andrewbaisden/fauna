@@ -1,0 +1,111 @@
+slug: komodo-dragon
+commonName: Komodo dragon
+scientificName: Varanus komodoensis
+aliases: []
+animalGroup: REPTILE
+diet: CARNIVORE
+activityPattern: DIURNAL
+sizeCategory: LARGE
+featured: true
+summary: The Komodo dragon is the largest living lizard, confined to a handful of Indonesian
+  islands. It hunts and scavenges using a combination of stealth, a serrated bite and venom
+  components.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Reptilia
+    slug: reptilia
+  - rank: ORDER
+    scientificName: Squamata
+    slug: squamata
+  - rank: FAMILY
+    scientificName: Varanidae
+    slug: varanidae
+  - rank: GENUS
+    scientificName: Varanus
+    slug: varanus
+  - rank: SPECIES
+    scientificName: Varanus komodoensis
+    slug: varanus-komodoensis
+habitats:
+  - slug: savanna
+    name: Savanna
+    description: Tropical dry forest and savanna on a few Lesser Sunda islands.
+regions:
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: hatchling
+    name: Hatchling
+    sortOrder: 0
+    description: Arboreal and more insectivorous, reducing cannibalism risk.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Terrestrial ambush predator and scavenger of large vertebrates.
+adaptations:
+  - title: Venom and serrated teeth
+    explanation: Oral venom glands and a tearing bite help subdue prey; the old 'bacteria only' story is
+      incomplete.
+behaviours:
+  - category: FEEDING
+    summary: Eats deer, pigs and carrion; large meals may be followed by long rest.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2019
+  threats:
+    - Climate-driven habitat loss
+    - Human encroachment
+  sourceUrl: https://www.iucnredlist.org/species/22884/9396711
+  sourceKey: iucn-komodo-dragon
+measurements:
+  - type: LENGTH
+    minValue: 2
+    maxValue: 3
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-komodo-dragon
+  - type: BODY_MASS
+    minValue: 70
+    maxValue: 90
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-komodo-dragon
+  - type: LIFESPAN
+    minValue: 25
+    maxValue: 40
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-komodo-dragon
+sources:
+  - key: iucn-komodo-dragon
+    title: Varanus komodoensis. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22884/9396711
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-komodo-dragon
+    title: Varanus komodoensis on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/3a/Komodo_dragon_at_Komodo_National_Park.jpg
+    alt: Komodo dragon at Komodo National Park
+    creator: Adhi Rachdian
+    license: CC_BY
+    attribution: Adhi Rachdian, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Komodo_dragon_at_Komodo_National_Park.jpg

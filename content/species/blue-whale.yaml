@@ -1,0 +1,118 @@
+slug: blue-whale
+commonName: Blue whale
+scientificName: Balaenoptera musculus
+aliases: []
+animalGroup: MAMMAL
+diet: FILTER_FEEDER
+activityPattern: CATHEMERAL
+sizeCategory: VERY_LARGE
+featured: true
+summary: The blue whale is the largest known animal. It lunge-feeds on krill in productive oceans.
+  Populations remain far below pre-whaling estimates in most ocean basins.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Artiodactyla
+    slug: artiodactyla
+  - rank: FAMILY
+    scientificName: Balaenopteridae
+    slug: balaenopteridae
+  - rank: GENUS
+    scientificName: Balaenoptera
+    slug: balaenoptera
+  - rank: SPECIES
+    scientificName: Balaenoptera musculus
+    slug: balaenoptera-musculus
+habitats:
+  - slug: marine
+    name: Marine
+    description: Open ocean feeding and migratory corridors.
+regions:
+  - slug: global-ocean
+    name: Global ocean
+    type: OCEAN
+    rangeType: NATIVE
+lifeStages:
+  - slug: calf
+    name: Calf
+    sortOrder: 0
+    description: Nursed on fat-rich milk; grows extremely quickly in the first months.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Migrates between feeding and breeding areas in several populations.
+adaptations:
+  - title: Expandable throat pleats
+    explanation: Ventral grooves let the mouth engulf enormous volumes of water and krill, then filter
+      the catch through baleen.
+behaviours:
+  - category: FEEDING
+    summary: Lunge feeding on dense krill patches.
+  - category: COMMUNICATION
+    summary: Produces very low-frequency sounds that can travel long distances in water.
+conservation:
+  status: EN
+  populationTrend: INCREASING
+  yearAssessed: 2018
+  threats:
+    - Ship strikes
+    - Entanglement
+    - Historical whaling depletion
+  sourceUrl: https://www.iucnredlist.org/species/2477/156923585
+  sourceKey: iucn-blue-whale
+measurements:
+  - type: BODY_MASS
+    minValue: 80000
+    maxValue: 150000
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-blue-whale
+  - type: LENGTH
+    minValue: 24
+    maxValue: 30
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-blue-whale
+  - type: TOP_SPEED
+    typicalValue: 48
+    unit: KM_H
+    qualifier: MAXIMUM_RECORDED
+    sourceKey: adw-blue-whale
+  - type: LIFESPAN
+    minValue: 70
+    maxValue: 90
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-blue-whale
+sources:
+  - key: iucn-blue-whale
+    title: Balaenoptera musculus. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/2477/156923585
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-blue-whale
+    title: Balaenoptera musculus on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/4/47/Blue_Whale_Tail_Fluke%2C_Indian_Ocean.JPG
+    alt: Blue whale tail fluke above the Indian Ocean near Sri Lanka
+    creator: Arvindkumarn
+    license: CC_BY_SA
+    attribution: Arvindkumarn, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Blue_Whale_Tail_Fluke,_Indian_Ocean.JPG

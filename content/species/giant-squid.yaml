@@ -1,0 +1,110 @@
+slug: giant-squid
+commonName: Giant squid
+scientificName: Architeuthis dux
+aliases: []
+animalGroup: INVERTEBRATE
+diet: CARNIVORE
+activityPattern: CATHEMERAL
+sizeCategory: VERY_LARGE
+featured: false
+summary: The giant squid is a deep-ocean cephalopod known mainly from carcasses and rare live
+  observations. Two elongated feeding tentacles plus eight arms capture prey in darkness.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Mollusca
+    slug: mollusca
+  - rank: CLASS
+    scientificName: Cephalopoda
+    slug: cephalopoda
+  - rank: ORDER
+    scientificName: Oegopsida
+    slug: oegopsida
+  - rank: FAMILY
+    scientificName: Architeuthidae
+    slug: architeuthidae
+  - rank: GENUS
+    scientificName: Architeuthis
+    slug: architeuthis
+  - rank: SPECIES
+    scientificName: Architeuthis dux
+    slug: architeuthis-dux
+habitats:
+  - slug: marine
+    name: Marine
+    description: Deep pelagic waters; most records are from temperate oceans.
+regions:
+  - slug: global-ocean
+    name: Global ocean
+    type: OCEAN
+    rangeType: NATIVE
+lifeStages:
+  - slug: paralarva
+    name: Paralarva
+    sortOrder: 0
+    description: Little is documented; presumed planktonic start.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Solitary deep-water hunter preyed upon by sperm whales.
+adaptations:
+  - title: Huge eyes
+    explanation: Among the largest eyes in the animal kingdom, likely for detecting silhouettes or
+      bioluminescence in dim water.
+behaviours:
+  - category: FEEDING
+    summary: Uses feeding tentacles to strike at fishes and other squid.
+conservation:
+  status: LC
+  populationTrend: UNKNOWN
+  yearAssessed: 2014
+  threats:
+    - Poorly known; deep-sea change may matter
+  sourceUrl: https://www.iucnredlist.org/species/163240/835858
+  sourceKey: iucn-giant-squid
+measurements:
+  - type: LENGTH
+    minValue: 8
+    maxValue: 13
+    unit: M
+    qualifier: ADULT
+    notes: Including tentacles; mantle is much shorter.
+    sourceKey: adw-giant-squid
+  - type: BODY_MASS
+    minValue: 200
+    maxValue: 275
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-giant-squid
+  - type: LIFESPAN
+    minValue: 3
+    maxValue: 5
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-giant-squid
+sources:
+  - key: iucn-giant-squid
+    title: Architeuthis dux. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/163240/835858
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-giant-squid
+    title: Architeuthis dux on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/3/3c/Giant_squid_Ranheim.jpg
+    alt: Giant squid specimen photographed in Ranheim
+    creator: NTNU Vitenskapsmuseet
+    license: CC_BY
+    attribution: NTNU Vitenskapsmuseet, Wikimedia Commons, CC BY
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Giant_squid_Ranheim.jpg

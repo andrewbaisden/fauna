@@ -1,0 +1,118 @@
+slug: barn-owl
+commonName: Barn owl
+scientificName: Tyto alba
+aliases: []
+animalGroup: BIRD
+diet: CARNIVORE
+activityPattern: NOCTURNAL
+sizeCategory: SMALL
+featured: false
+summary: The barn owl is a nearly cosmopolitan owl that hunts small mammals by sound. Heart-shaped
+  facial discs funnel noise toward asymmetrically placed ears.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Aves
+    slug: aves
+  - rank: ORDER
+    scientificName: Strigiformes
+    slug: strigiformes
+  - rank: FAMILY
+    scientificName: Tytonidae
+    slug: tytonidae
+  - rank: GENUS
+    scientificName: Tyto
+    slug: tyto
+  - rank: SPECIES
+    scientificName: Tyto alba
+    slug: tyto-alba
+habitats:
+  - slug: grassland
+    name: Grassland and farmland
+    description: Open country with rodent prey and cavities for nesting.
+regions:
+  - slug: europe
+    name: Europe
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: africa
+    name: Africa
+    type: CONTINENT
+    rangeType: NATIVE
+  - slug: americas
+    name: Americas
+    type: BIOGEOGRAPHIC
+    rangeType: NATIVE
+lifeStages:
+  - slug: nestling
+    name: Nestling
+    sortOrder: 0
+    description: Raised in cavities, barns and nest boxes.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Mostly nocturnal hunter; pairs may reuse sites.
+adaptations:
+  - title: Asymmetric ears
+    explanation: Left and right ear openings sit at different heights, improving vertical localisation
+      of rustling prey in darkness.
+behaviours:
+  - category: FEEDING
+    summary: Specialises on small mammals; silent flight reduces detection.
+conservation:
+  status: LC
+  populationTrend: DECREASING
+  yearAssessed: 2021
+  threats:
+    - Rodenticides
+    - Road mortality
+  sourceUrl: https://www.iucnredlist.org/species/22688504/155542941
+  sourceKey: iucn-barn-owl
+measurements:
+  - type: BODY_MASS
+    minValue: 0.25
+    maxValue: 0.5
+    unit: KG
+    qualifier: ADULT
+    sourceKey: adw-barn-owl
+  - type: WINGSPAN
+    minValue: 0.8
+    maxValue: 0.95
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-barn-owl
+  - type: LIFESPAN
+    minValue: 4
+    maxValue: 10
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-barn-owl
+sources:
+  - key: iucn-barn-owl
+    title: Tyto alba. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/22688504/155542941
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-barn-owl
+    title: Tyto alba on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/f/f9/Barn_Owl_%28Tyto_alba%29.jpg
+    alt: Barn owl perched facing the camera
+    creator: सुगम पोखरेल
+    license: CC_BY_SA
+    attribution: सुगम पोखरेल, Wikimedia Commons, CC BY-SA
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Barn_Owl_(Tyto_alba).jpg

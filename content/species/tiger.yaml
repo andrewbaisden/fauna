@@ -1,0 +1,114 @@
+slug: tiger
+commonName: Tiger
+scientificName: Panthera tigris
+aliases: []
+animalGroup: MAMMAL
+diet: CARNIVORE
+activityPattern: CREPUSCULAR
+sizeCategory: LARGE
+featured: true
+summary: The tiger is the largest living cat, a solitary forest hunter of Asia. Stripe patterns are
+  individual; remaining populations are fragmented across a fraction of the historical range.
+taxonomy:
+  - rank: KINGDOM
+    scientificName: Animalia
+    slug: animalia
+  - rank: PHYLUM
+    scientificName: Chordata
+    slug: chordata
+  - rank: CLASS
+    scientificName: Mammalia
+    slug: mammalia
+  - rank: ORDER
+    scientificName: Carnivora
+    slug: carnivora
+  - rank: FAMILY
+    scientificName: Felidae
+    slug: felidae
+  - rank: GENUS
+    scientificName: Panthera
+    slug: panthera
+  - rank: SPECIES
+    scientificName: Panthera tigris
+    slug: panthera-tigris
+habitats:
+  - slug: tropical-forest
+    name: Tropical forest
+    description: Moist and dry forests with cover and ungulate prey, from mangrove to montane woodland.
+regions:
+  - slug: asia
+    name: Asia
+    type: CONTINENT
+    rangeType: NATIVE
+lifeStages:
+  - slug: cub
+    name: Cub
+    sortOrder: 0
+    description: Born in dens and dependent on the mother for more than a year.
+  - slug: adult
+    name: Adult
+    sortOrder: 1
+    description: Solitary adults hold large territories sized by prey density and sex.
+adaptations:
+  - title: Disruptive striping
+    explanation: Vertical stripes break up the outline in tall grass and dappled forest light, aiding
+      ambush rather than open pursuit.
+behaviours:
+  - category: FEEDING
+    summary: Takes deer, wild pig and other large ungulates; surplus killing is rare.
+  - category: COMMUNICATION
+    summary: Scent marks and vocalisations advertise occupancy of a range.
+conservation:
+  status: EN
+  populationTrend: DECREASING
+  yearAssessed: 2021
+  threats:
+    - Poaching
+    - Prey depletion
+    - Habitat fragmentation
+  sourceUrl: https://www.iucnredlist.org/species/15955/214862637
+  sourceKey: iucn-tiger
+measurements:
+  - type: BODY_MASS
+    minValue: 65
+    maxValue: 260
+    unit: KG
+    qualifier: ADULT
+    notes: Mainland subspecies are larger than island forms.
+    sourceKey: adw-tiger
+  - type: LENGTH
+    minValue: 1.4
+    maxValue: 2.8
+    unit: M
+    qualifier: ADULT
+    sourceKey: adw-tiger
+  - type: LIFESPAN
+    minValue: 8
+    maxValue: 15
+    unit: YEAR
+    qualifier: TYPICAL
+    sourceKey: adw-tiger
+sources:
+  - key: iucn-tiger
+    title: Panthera tigris. The IUCN Red List of Threatened Species
+    url: https://www.iucnredlist.org/species/15955/214862637
+    publisher: IUCN
+    accessedAt: 2026-09-08
+    roles:
+      - CONSERVATION
+  - key: adw-tiger
+    title: Panthera tigris on Animal Diversity Web or equivalent secondary literature
+    url: https://animaldiversity.org/
+    publisher: Animal Diversity Web
+    accessedAt: 2026-09-08
+    roles:
+      - MEASUREMENT
+      - TEXT
+media:
+  - kind: PHOTO
+    url: https://upload.wikimedia.org/wikipedia/commons/4/49/Panthera_tigris_tigris.jpg
+    alt: Bengal tiger in profile
+    creator: John and Karen Hollingsworth, USFWS
+    license: PUBLIC_DOMAIN
+    attribution: John and Karen Hollingsworth, USFWS, Wikimedia Commons, PUBLIC DOMAIN
+    sourceUrl: https://commons.wikimedia.org/wiki/File:Panthera_tigris_tigris.jpg
