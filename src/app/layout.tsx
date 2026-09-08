@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Providers } from "@/components/providers";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -19,7 +20,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.BETTER_AUTH_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Fauna — explore life on Earth",
     template: "%s · Fauna",

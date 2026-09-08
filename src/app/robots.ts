@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/site-url";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.BETTER_AUTH_URL ?? "http://localhost:3000";
+  const base = getSiteUrl();
   return {
     rules: { userAgent: "*", allow: "/", disallow: ["/my-fauna", "/api/"] },
     sitemap: `${base}/sitemap.xml`,

@@ -27,11 +27,17 @@ const envSchema = z.object({
 export type Env = z.infer<typeof envSchema>;
 
 function readEnv(): Env {
+  const betterAuthUrl =
+    process.env.BETTER_AUTH_URL?.trim() ||
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`
+      : undefined);
+
   const parsed = envSchema.safeParse({
     NODE_ENV: process.env.NODE_ENV,
     DATABASE_URL: process.env.DATABASE_URL,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
-    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+    BETTER_AUTH_URL: betterAuthUrl,
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     SENTRY_DSN: process.env.SENTRY_DSN,
