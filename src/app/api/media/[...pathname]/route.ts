@@ -77,15 +77,22 @@ export async function GET(
   }
 
   try {
-    const result = await get(pathname, { access: "private" });
+    const result = await get(pathname, {
+      access: "private",
+      // Models are overwritten in place; skip Blob CDN so prod sees the latest GLB.
+      useCache: !pathname.startsWith("models/"),
+    });
     if (
       result !== null &&
       result.statusCode === 200 &&
       result.stream !== null
     ) {
+      const cacheControl = pathname.startsWith("models/")
+        ? "public, max-age=3600, s-maxage=3600"
+        : "public, max-age=86400, s-maxage=604800, immutable";
       return new NextResponse(result.stream, {
         headers: {
-          "Cache-Control": "public, max-age=86400, s-maxage=604800, immutable",
+          "Cache-Control": cacheControl,
           "Content-Type": contentTypeFor(pathname, result.blob.contentType),
           "X-Content-Type-Options": "nosniff",
         },
