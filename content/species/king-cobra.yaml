@@ -111,3 +111,16 @@ media:
     license: PUBLIC_DOMAIN
     attribution: TimVickers, Wikimedia Commons, PUBLIC DOMAIN
     sourceUrl: https://commons.wikimedia.org/wiki/File:Ophiophagus_hannah.jpg
+threeD:
+  - url: /models/king-cobra.glb
+    format: GLB
+    fileSizeBytes: 1276
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ophiophagus_hannah.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ophiophagus_hannah.jpg"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.

@@ -154,15 +154,16 @@ media:
 threeD:
   - url: /models/african-elephant.glb
     format: GLB
+    fileSizeBytes: 2272
     creator: Fauna
     source: Project-authored stylized educational mesh
     license: CC0
-    attribution: Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal.
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
     modified: false
     version: "1.0.0"
-    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
-    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg
-    notes: Stylized stand-in used to prove the viewer pipeline until a licensed living-form scan is sourced.
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.
 rangeGeometry:
   confidence: LOW
   sourceKey: gbif-elephant

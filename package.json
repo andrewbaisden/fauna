@@ -21,9 +21,11 @@
     "db:studio": "prisma studio",
     "content:expand": "tsx scripts/write-catalogue.ts",
     "assets:elephant": "tsx scripts/generate-elephant-glb.ts",
+    "assets:models": "tsx scripts/generate-species-models.ts",
     "assets:import": "tsx scripts/import-glb.ts",
     "assets:fetch": "tsx scripts/fetch-licensed-models.ts",
     "assets:mirror-media": "tsx --env-file=.env scripts/mirror-media.ts",
+    "assets:mirror-models": "tsx --env-file=.env scripts/mirror-models.ts",
     "prepare": "husky"
   },
   "dependencies": {

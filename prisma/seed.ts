@@ -28,7 +28,14 @@ function resolveHostedUrl(
   if (!url) {
     return url;
   }
-  return map.hosts[url] ?? url;
+  if (map.hosts[url]) {
+    return map.hosts[url];
+  }
+  // Production GLBs live on private Blob and are served via /api/media/models/…
+  if (url.startsWith("/models/")) {
+    return `/api/media${url}`;
+  }
+  return url;
 }
 
 async function loadSpeciesFiles(): Promise<SpeciesContent[]> {
@@ -299,7 +306,7 @@ async function upsertSpecies(
     await prisma.threeDAsset.createMany({
       data: record.threeD.map((asset) => ({
         speciesId: species.id,
-        url: asset.url,
+        url: resolveHostedUrl(asset.url, mediaMap) ?? asset.url,
         format: asset.format,
         polyCount: asset.polyCount,
         fileSizeBytes: asset.fileSizeBytes,

@@ -111,3 +111,16 @@ media:
     license: PUBLIC_DOMAIN
     attribution: Steve Hillebrand, USFWS, PUBLIC DOMAIN
     sourceUrl: https://commons.wikimedia.org/wiki/File:Haliaeetus_leucocephalus-flight-USFWS.jpg
+threeD:
+  - url: /models/bald-eagle.glb
+    format: GLB
+    fileSizeBytes: 1584
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/73/Haliaeetus_leucocephalus-flight-USFWS.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/73/Haliaeetus_leucocephalus-flight-USFWS.jpg"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.

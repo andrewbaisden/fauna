@@ -17,15 +17,22 @@ Do not use CC-BY-NC for production hosting we cannot guarantee will remain non-c
 
 Do not download Sketchfab Standard-license models (non-redistributable).
 
-Do not commit large binaries. Git holds `content/assets/licenses.json` and processing scripts. GLBs live in `public/models/` locally (gitignored) or on Vercel Blob / R2 in production.
+Do not commit large binaries. Git holds `content/assets/licenses.json` and processing scripts. GLBs live in `public/models/` locally (gitignored) and on **private Vercel Blob** in production (`models/<slug>.glb`), served through `/api/media/models/…`.
 
 ## 3D pipeline
 
 ```
-Source model → license check → optional gltfpack/Draco → poster image → public/models or Blob → YAML threeD + licenses.json → seed → Fauna viewer
+Source model or educational stand-in → license check → public/models → Blob mirror → YAML threeD + licenses.json → seed → Fauna viewer
 ```
 
-Educational stand-in: `pnpm assets:elephant` still writes a tiny CC0 box-mesh elephant used only as a pipeline smoke test.
+Generate educational stand-ins for the full catalogue:
+
+```bash
+pnpm assets:models          # box-mesh GLB per species + YAML threeD
+pnpm assets:fetch           # overwrite grey-wolf / red-fox with Quaternius CC0
+pnpm assets:mirror-models   # upload GLBs to private Blob
+pnpm db:seed
+```
 
 ### Checklist: add a licensed GLB for a species
 

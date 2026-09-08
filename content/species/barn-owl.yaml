@@ -116,3 +116,16 @@ media:
     license: CC_BY_SA
     attribution: सुगम पोखरेल, Wikimedia Commons, CC BY-SA
     sourceUrl: https://commons.wikimedia.org/wiki/File:Barn_Owl_(Tyto_alba).jpg
+threeD:
+  - url: /models/barn-owl.glb
+    format: GLB
+    fileSizeBytes: 1580
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Barn_Owl_%28Tyto_alba%29.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Barn_Owl_%28Tyto_alba%29.jpg"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.

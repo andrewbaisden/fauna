@@ -115,3 +115,16 @@ media:
     license: CC_BY_SA
     attribution: Didier Descouens, Wikimedia Commons, CC BY-SA
     sourceUrl: https://commons.wikimedia.org/wiki/File:Gorilla_Male_Global.jpg
+threeD:
+  - url: /models/western-gorilla.glb
+    format: GLB
+    fileSizeBytes: 1800
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Gorilla_Male_Global.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Gorilla_Male_Global.jpg"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.

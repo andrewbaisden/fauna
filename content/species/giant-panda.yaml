@@ -110,3 +110,16 @@ media:
     license: CC_BY_SA
     attribution: J. Patrick Fischer, Wikimedia Commons, CC BY-SA
     sourceUrl: https://commons.wikimedia.org/wiki/File:Grosser_Panda.JPG
+threeD:
+  - url: /models/giant-panda.glb
+    format: GLB
+    fileSizeBytes: 1948
+    creator: Fauna
+    source: Project-authored stylized educational mesh
+    license: CC0
+    attribution: "Fauna educational mesh, CC0. Not a photogrammetric scan of a living animal."
+    modified: false
+    version: "1.0.0"
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG"
+    notes: Stylized box-mesh stand-in so every species has a viewable model. Replace with a licensed living-form mesh when available.

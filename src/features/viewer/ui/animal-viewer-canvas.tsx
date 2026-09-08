@@ -93,7 +93,7 @@ function Scene({
 
   return (
     <>
-      <color attach="background" args={["#e4d6c1"]} />
+      <color attach="background" args={["#d5e6e3"]} />
       <ambientLight intensity={0.8} />
       <directionalLight position={[4, 8, 6]} intensity={1.4} />
       <Bounds fit clip observe margin={1.2}>

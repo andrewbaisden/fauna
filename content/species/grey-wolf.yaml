@@ -144,11 +144,11 @@ threeD:
     format: GLB
     fileSizeBytes: 986712
     creator: Quaternius
-    source: https://poly.pizza/m/P1gU3Qkr9r
+    source: "https://poly.pizza/m/P1gU3Qkr9r"
     license: CC0
-    attribution: Quaternius, CC0 (via Poly Pizza)
+    attribution: "Quaternius, CC0 (via Poly Pizza)"
     modified: false
     version: "1.0.0"
-    posterImageUrl: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
-    fallbackImageUrl: https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg
-    notes: Low-poly stylized educational mesh from Quaternius Animated Animal Pack. Not a photogrammetric scan.
+    posterImageUrl: "https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg"
+    fallbackImageUrl: "https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg"
+    notes: Low-poly stylized educational mesh from Quaternius. Not a photogrammetric scan.
