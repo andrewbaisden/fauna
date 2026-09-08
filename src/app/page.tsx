@@ -11,16 +11,16 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-bark/10 bg-[radial-gradient(circle_at_top_left,_#e4d6c1,_#f4efe4_55%)]">
+      <section className="relative overflow-hidden border-b border-teal/15 bg-[radial-gradient(circle_at_top_left,_#cfe6e4,_#eef5f4_52%,_#e4f0ea_100%)]">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 md:grid-cols-[1.2fr_0.8fr] md:py-28">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal">
               Field guide
             </p>
             <h1 className="mt-3 font-display text-5xl leading-[1.05] md:text-7xl">
               Explore life on Earth.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-ink/75">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-ink/75">
               Fauna is a structured wildlife encyclopedia: size, diet, habitat,
               conservation, life stages and — where a licensed model exists — an
               interactive 3D specimen.
@@ -34,8 +34,8 @@ export default async function HomePage() {
               </Button>
             </div>
           </div>
-          <aside className="self-end rounded-3xl bg-ink p-6 text-paper">
-            <p className="text-sm uppercase tracking-wide text-sand">
+          <aside className="self-end rounded-3xl bg-ink p-6 text-paper shadow-[0_20px_50px_-24px_rgb(23_54_58_/_55%)]">
+            <p className="text-sm uppercase tracking-[0.18em] text-teal">
               Not a Pokédex
             </p>
             <p className="mt-3 text-paper/85">
@@ -53,7 +53,7 @@ export default async function HomePage() {
             <li key={group}>
               <Link
                 href={`/animals?group=${group}`}
-                className="block rounded-2xl bg-sand px-4 py-6 text-lg font-medium hover:bg-moss hover:text-paper"
+                className="block rounded-2xl bg-sand px-4 py-6 text-lg font-medium transition-colors hover:bg-teal hover:text-paper"
               >
                 {GROUP_LABELS[group]}
               </Link>

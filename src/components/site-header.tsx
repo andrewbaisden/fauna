@@ -14,7 +14,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
         <Link
           href="/"
-          className="font-display text-2xl tracking-tight text-moss"
+          className="font-display text-2xl tracking-tight text-teal"
         >
           Fauna
         </Link>

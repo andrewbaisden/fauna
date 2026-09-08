@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4efe4;
-  --paper-strong: #fffdf8;
-  --ink: #1c1914;
-  --moss: #2f5d3a;
-  --moss-dark: #21422a;
-  --bark: #6b5744;
-  --sand: #e4d6c1;
-  --clay: #b85c38;
+  /* Brand palette — Adobe Express compound theme */
+  --teal: #097f8f;
+  --moss: #098f54;
+  --moss-dark: #067042;
+  --bark: #8f6409;
+  --clay: #8f4309;
+  --ink: #17363a;
+
+  /* Surfaces derived from ink/teal (cool field-guide paper) */
+  --paper: #eef5f4;
+  --paper-strong: #f7fbfa;
+  --sand: #d5e6e3;
 }
 
 @theme inline {
@@ -20,8 +24,9 @@
   --color-bark: var(--bark);
   --color-sand: var(--sand);
   --color-clay: var(--clay);
-  --font-sans: var(--font-source-sans);
-  --font-display: var(--font-fraunces);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-public-sans);
+  --font-display: var(--font-libre-baskerville);
 }
 
 html {
@@ -43,16 +48,37 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 0% -10%,
+      rgb(9 127 143 / 12%),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 100% 0%,
+      rgb(9 143 84 / 10%),
+      transparent 45%
+    ),
+    var(--paper);
   color: var(--ink);
   font-family: var(--font-sans), "Segoe UI", sans-serif;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1;
 }
 
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family:
+    var(--font-display), "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 :focus-visible {
-  outline: 2px solid var(--moss);
+  outline: 2px solid var(--teal);
   outline-offset: 3px;
+}
+
+a:hover {
+  text-underline-offset: 0.2em;
 }
