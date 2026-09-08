@@ -46,6 +46,27 @@ function extensionFromContentType(
   return "jpg";
 }
 
+/** Prefer Commons FilePath (often better-behaved than direct upload.wikimedia.org). */
+function candidateDownloadUrls(sourceUrl: string): string[] {
+  const urls = [sourceUrl];
+  try {
+    const parsed = new URL(sourceUrl);
+    if (parsed.hostname === "upload.wikimedia.org") {
+      const fileName = decodeURIComponent(
+        parsed.pathname.split("/").pop() ?? "",
+      );
+      if (fileName) {
+        urls.unshift(
+          `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=1600`,
+        );
+      }
+    }
+  } catch {
+    // keep original
+  }
+  return [...new Set(urls)];
+}
+
 async function loadMap(mapPath: string): Promise<MediaMap> {
   const raw = await readFile(mapPath, "utf8");
   return JSON.parse(raw) as MediaMap;
@@ -89,28 +110,56 @@ async function collectSourceUrls(): Promise<
   });
 }
 
-async function download(url: string): Promise<{
+async function downloadOnce(url: string): Promise<{
   buffer: Buffer;
   contentType: string;
   extension: string;
-}> {
+} | null> {
   const response = await fetch(url, {
     headers: {
       "User-Agent":
-        "FaunaMediaMirror/1.0 (educational encyclopedia; contact via GitHub)",
+        "FaunaMediaMirror/1.0 (https://github.com/andrewbaisden/fauna; educational encyclopedia)",
       Accept: "image/*",
     },
+    redirect: "follow",
   });
   if (!response.ok) {
-    throw new Error(`Download failed ${response.status} for ${url}`);
+    console.warn(`  ${response.status} ${url}`);
+    return null;
   }
   const contentType = response.headers.get("content-type") ?? "image/jpeg";
+  if (!contentType.startsWith("image/")) {
+    console.warn(`  non-image content-type ${contentType} for ${url}`);
+    return null;
+  }
   const buffer = Buffer.from(await response.arrayBuffer());
   return {
     buffer,
     contentType,
     extension: extensionFromContentType(contentType, url),
   };
+}
+
+async function download(sourceUrl: string): Promise<{
+  buffer: Buffer;
+  contentType: string;
+  extension: string;
+}> {
+  const candidates = candidateDownloadUrls(sourceUrl);
+
+  for (let attempt = 1; attempt <= 8; attempt += 1) {
+    for (const url of candidates) {
+      const file = await downloadOnce(url);
+      if (file) {
+        return file;
+      }
+    }
+    const waitMs = Math.min(attempt * 8000, 60000);
+    console.warn(`  retry ${attempt}/8 after ${waitMs}ms`);
+    await sleep(waitMs);
+  }
+
+  throw new Error(`Download failed for ${sourceUrl} after retries`);
 }
 
 async function mirrorToBlob() {
@@ -125,36 +174,52 @@ async function mirrorToBlob() {
   const map = await loadMap(mapPath);
   const entries = await collectSourceUrls();
   let uploaded = 0;
+  const failures: string[] = [];
 
   for (const entry of entries) {
-    if (map.hosts[entry.url]?.includes("blob.vercel-storage.com")) {
-      console.info(`skip (already on Blob) ${entry.slug}`);
+    if (map.hosts[entry.url]?.startsWith("/api/media/media/")) {
+      console.info(`skip (already mirrored) ${entry.slug}`);
       continue;
     }
 
     console.info(`fetch ${entry.slug}…`);
-    const file = await download(entry.url);
-    const hash = createHash("sha1")
-      .update(entry.url)
-      .digest("hex")
-      .slice(0, 12);
-    const pathname = `media/${entry.slug}-${hash}.${file.extension}`;
-    const blob = await put(pathname, file.buffer, {
-      access: "public",
-      contentType: file.contentType,
-      token,
-      addRandomSuffix: false,
-      allowOverwrite: true,
-    });
-    map.hosts[entry.url] = blob.url;
-    uploaded += 1;
-    console.info(`  → ${blob.url}`);
-    await sleep(400);
+    try {
+      const file = await download(entry.url);
+      const hash = createHash("sha1")
+        .update(entry.url)
+        .digest("hex")
+        .slice(0, 12);
+      const pathname = `media/${entry.slug}-${hash}.${file.extension}`;
+      await put(pathname, file.buffer, {
+        access: "private",
+        contentType: file.contentType,
+        token,
+        addRandomSuffix: false,
+        allowOverwrite: true,
+      });
+      const hosted = `/api/media/${pathname}`;
+      map.hosts[entry.url] = hosted;
+      uploaded += 1;
+      await writeFile(mapPath, `${JSON.stringify(map, null, 2)}\n`);
+      console.info(`  → ${hosted}`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`  FAILED ${entry.slug}: ${message}`);
+      failures.push(entry.slug);
+    }
+    await sleep(3000);
   }
 
-  await writeFile(mapPath, `${JSON.stringify(map, null, 2)}\n`);
-  console.info(`Done. Uploaded ${uploaded}. Updated ${mapPath}`);
-  console.info("Run pnpm db:seed so the database uses Blob URLs.");
+  console.info(
+    `Done. Uploaded ${uploaded}. Mapped ${Object.keys(map.hosts).length}.`,
+  );
+  if (failures.length > 0) {
+    console.error(
+      `Failed ${failures.length}: ${failures.join(", ")}. Re-run pnpm assets:mirror-media to resume.`,
+    );
+    process.exit(1);
+  }
+  console.info("Run pnpm db:seed so the database uses /api/media/… URLs.");
 }
 
 async function mirrorLocal() {
@@ -168,7 +233,7 @@ async function mirrorLocal() {
   for (const entry of entries) {
     if (
       map.hosts[entry.url]?.startsWith("/media/") ||
-      map.hosts[entry.url]?.includes("blob.vercel-storage.com")
+      map.hosts[entry.url]?.startsWith("/api/media/")
     ) {
       console.info(`skip ${entry.slug}`);
       continue;
@@ -184,11 +249,11 @@ async function mirrorLocal() {
     await writeFile(path.join(mediaDir, filename), file.buffer);
     map.hosts[entry.url] = `/media/${filename}`;
     written += 1;
+    await writeFile(mapPath, `${JSON.stringify(map, null, 2)}\n`);
     console.info(`  → /media/${filename}`);
-    await sleep(500);
+    await sleep(3000);
   }
 
-  await writeFile(mapPath, `${JSON.stringify(map, null, 2)}\n`);
   console.info(`Done. Wrote ${written} local files. Run pnpm db:seed.`);
 }
 

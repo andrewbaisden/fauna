@@ -58,7 +58,7 @@ Vercel for the app, [Neon](https://neon.tech) for PostgreSQL, [Vercel Blob](http
 2. Create a Neon project and copy the **pooled** connection string into `DATABASE_URL`.
 3. Set `DIRECT_URL` to the **unpooled** Neon URL for `pnpm db:migrate:deploy`.
 4. Set `BETTER_AUTH_SECRET` (≥32 chars) and `BETTER_AUTH_URL` to the production origin.
-5. Create a Vercel **Blob** store, set `BLOB_READ_WRITE_TOKEN`, then locally run `pnpm assets:mirror-media` and commit the updated `content/assets/media-map.json` (or re-seed in production after the map is present).
+5. Create a Vercel **Blob** store (private is fine), set `BLOB_READ_WRITE_TOKEN`, then locally run `pnpm assets:mirror-media` and commit the updated `content/assets/media-map.json`. Photos are served via `/api/media/…`.
 6. Optional: Sentry DSNs, PostHog key (EU host by default), GitHub OAuth.
 7. Deploy from `main`. After the first deploy, run migrate + seed against production once.
 

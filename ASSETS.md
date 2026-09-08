@@ -63,19 +63,23 @@ Wikimedia Commons files only when the file page license is compatible. Store the
 
 ### Host photos on Vercel Blob (recommended)
 
-Hotlinking Commons through `next/image` triggers rate limits (HTTP 429). Mirror once after you create a Blob store on Vercel:
+Hotlinking Commons through `next/image` triggers rate limits (HTTP 429). Mirror once after you create a Blob store on Vercel.
 
-1. Import the GitHub repo into Vercel and create a **Blob** store (Storage → Blob).
+This project expects a **private** Blob store (Vercel default for many new stores). Private objects are not publicly URL-fetchable; the app serves them through `/api/media/media/…`.
+
+1. Import the GitHub repo into Vercel and create a **Blob** store (Storage → Blob). Private access is fine.
 2. Copy `BLOB_READ_WRITE_TOKEN` into local `.env` (and ensure it is set in the Vercel project).
 3. Run:
 
 ```bash
-pnpm assets:mirror-media          # uploads to Blob, writes content/assets/media-map.json
+pnpm assets:mirror-media          # put(..., { access: "private" }) + writes media-map.json
 pnpm db:seed                      # seed rewrites DB media URLs from the map
 ```
 
-Optional: `pnpm assets:mirror-media -- local` downloads into `public/media/` (gitignored) for offline/dev without Blob. Optional: `pnpm assets:mirror-media -- rewrite-yaml` rewrites YAML `url` fields to hosted URLs (keep `sourceUrl` as Commons provenance).
+4. Commit `content/assets/media-map.json` and redeploy so production uses the proxy paths.
 
-`content/assets/media-map.json` maps source Wikimedia URLs → Blob or `/media/…` URLs. Seed always applies this map.
+Optional: `pnpm assets:mirror-media -- local` downloads into `public/media/` (gitignored) for offline/dev without Blob.
+
+`content/assets/media-map.json` maps source Wikimedia URLs → `/api/media/media/…` or `/media/…`. Seed always applies this map.
 
 When an image 404s on Commons, open the file page, copy the current original URL, update YAML, clear the stale map entry if present, re-mirror, and re-seed.

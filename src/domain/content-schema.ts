@@ -173,7 +173,11 @@ export const speciesContentSchema = z.object({
           "THUMBNAIL",
           "POSTER",
         ]),
-        url: z.union([z.string().url(), z.string().regex(/^\/media\/.+/)]),
+        url: z.union([
+          z.string().url(),
+          z.string().regex(/^\/media\/.+/),
+          z.string().regex(/^\/api\/media\/media\/.+/),
+        ]),
         alt: z.string().min(8),
         creator: z.string().min(1),
         license: z.enum([

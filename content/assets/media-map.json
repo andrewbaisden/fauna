@@ -1,5 +1,36 @@
 {
   "version": 1,
-  "description": "Maps Wikimedia (or other source) media URLs to hosted URLs on Vercel Blob or /public/media. Seed applies this map so runtime never hotlinks Commons.",
-  "hosts": {}
+  "description": "Maps Wikimedia (or other source) media URLs to hosted paths. Private Vercel Blob stores use /api/media/media/… (app proxy). Local mirrors use /media/…. Seed applies this map.",
+  "hosts": {
+    "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg": "/api/media/media/african-elephant-6079010d35ec.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/8/8d/American_bison_k5680-1.jpg": "/api/media/media/american-bison-c78d3f30f59f.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ambystoma_mexicanum_1.jpg": "/api/media/media/axolotl-b3a865a92701.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/7/73/Haliaeetus_leucocephalus-flight-USFWS.jpg": "/api/media/media/bald-eagle-fc9d02a379f3.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f9/Barn_Owl_%28Tyto_alba%29.jpg": "/api/media/media/barn-owl-b6ff397ad852.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/4/47/Blue_Whale_Tail_Fluke%2C_Indian_Ocean.JPG": "/api/media/media/blue-whale-0c029cef0ad4.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/36/Cheetah_%28Acinonyx_jubatus%29_female_2.jpg": "/api/media/media/cheetah-6aca8fae3716.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/ad/Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg": "/api/media/media/clownfish-5a6912e6c308.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a3/Aptenodytes_forsteri_-Snow_Hill_Island%2C_Antarctica_-adults_and_juvenile-8.jpg": "/api/media/media/emperor-penguin-fec8c928327a.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/33/Octopus3.jpg": "/api/media/media/giant-pacific-octopus-6bbe4b7dc03d.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG": "/api/media/media/giant-panda-954b630e31ed.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/3c/Giant_squid_Ranheim.jpg": "/api/media/media/giant-squid-c4cba17d503d.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/3f/South_African_giraffe_%28Giraffa_camelopardalis_giraffa%29_head_with_oxpecker_Kruger.jpg": "/api/media/media/giraffe-8773ac032d93.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/6/6d/Phyllobates_terribilis.jpg": "/api/media/media/golden-poison-frog-c8dcc796138d.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg": "/api/media/media/great-white-shark-df74e256b81b.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/b/bb/Hawaii_turtle_2.JPG": "/api/media/media/green-sea-turtle-1d4e5aff05a0.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/23/Canis_lupus.jpg": "/api/media/media/grey-wolf-9a89146982bb.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a3/Hippo_pod_edit.jpg": "/api/media/media/hippopotamus-125cb2f81e65.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/9/99/Apis_mellifera_-_honey_bee.jpg": "/api/media/media/honey-bee-a57a2f3aecc7.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ophiophagus_hannah.jpg": "/api/media/media/king-cobra-3b7352d69a08.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Komodo_dragon_at_Komodo_National_Park.jpg": "/api/media/media/komodo-dragon-92b102b05acb.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg": "/api/media/media/lion-64ed155b6053.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/6/63/Monarch_In_May.jpg": "/api/media/media/monarch-butterfly-b12414fb995a.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/1/1e/Peregrine_Falcon_in_flight.jpg": "/api/media/media/peregrine-falcon-66b158cb4a33.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/09/Polar_Bear_-_Alaska.jpg": "/api/media/media/polar-bear-fb4910e3f0e6.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg": "/api/media/media/red-fox-4c76b1a021aa.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/b/bc/Saltwater_Crocodile_%28Crocodylus_porosus%29_%2810106331165%29.jpg": "/api/media/media/saltwater-crocodile-c5c0041a4949.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/4/49/Panthera_tigris_tigris.jpg": "/api/media/media/tiger-aaa6ce8a8d28.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/c/c3/Gorilla_Male_Global.jpg": "/api/media/media/western-gorilla-5a19c229e24e.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f1/Whale_shark_Georgia_aquarium.jpg": "/api/media/media/whale-shark-03c772ef1b37.jpg"
+  }
 }
