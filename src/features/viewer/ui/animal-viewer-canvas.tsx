@@ -78,11 +78,9 @@ function Loader({ commonName }: { commonName: string }) {
 function Scene({
   url,
   preset,
-  showScale,
 }: {
   url: string;
   preset: "front" | "side" | "rear";
-  showScale: boolean;
 }) {
   const target: [number, number, number] =
     preset === "side"
@@ -101,12 +99,6 @@ function Scene({
           <Model url={url} />
         </Center>
       </Bounds>
-      {showScale ? (
-        <mesh position={[1.4, 0.85, 0]}>
-          <boxGeometry args={[0.4, 1.7, 0.3]} />
-          <meshStandardMaterial color="#6b5744" transparent opacity={0.45} />
-        </mesh>
-      ) : null}
       <OrbitControls
         makeDefault
         enablePan={false}
@@ -130,9 +122,7 @@ export function AnimalViewerCanvas({
   notes,
 }: ViewerProps) {
   const preset = useViewerStore((state) => state.preset);
-  const showScale = useViewerStore((state) => state.showScale);
   const setPreset = useViewerStore((state) => state.setPreset);
-  const toggleScale = useViewerStore((state) => state.toggleScale);
 
   useEffect(() => {
     captureEvent(ANALYTICS_EVENTS.modelLoaded, { name: commonName });
@@ -148,7 +138,7 @@ export function AnimalViewerCanvas({
         >
           <Suspense fallback={<Loader commonName={commonName} />}>
             <ViewerErrorBoundary commonName={commonName}>
-              <Scene url={url} preset={preset} showScale={showScale} />
+              <Scene url={url} preset={preset} />
             </ViewerErrorBoundary>
           </Suspense>
         </Canvas>
@@ -166,9 +156,6 @@ export function AnimalViewerCanvas({
             {item.slice(1)}
           </Button>
         ))}
-        <Button type="button" size="sm" variant="outline" onClick={toggleScale}>
-          {showScale ? "Hide human scale" : "Show human scale"}
-        </Button>
       </div>
       <p className="text-xs text-ink/60">
         {attribution}

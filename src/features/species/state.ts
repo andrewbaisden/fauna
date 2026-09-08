@@ -40,14 +40,10 @@ export const useRecentsStore = create<RecentsState>()(
 
 interface ViewerState {
   preset: "front" | "side" | "rear";
-  showScale: boolean;
   setPreset: (preset: "front" | "side" | "rear") => void;
-  toggleScale: () => void;
 }
 
 export const useViewerStore = create<ViewerState>((set) => ({
   preset: "front",
-  showScale: false,
   setPreset: (preset) => set({ preset }),
-  toggleScale: () => set((state) => ({ showScale: !state.showScale })),
 }));
