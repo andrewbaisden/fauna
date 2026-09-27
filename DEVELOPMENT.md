@@ -1,0 +1,60 @@
+# Development
+
+Operational notes for running, testing, and deploying Fauna. The public project overview lives in [README.md](README.md).
+
+## Stack
+
+Next.js 16 App Router, TypeScript strict, Tailwind CSS, Prisma 7 + PostgreSQL, Better Auth, Zod, Zustand, TanStack Query, React Three Fiber, Leaflet, Vitest, Playwright, Biome, Sentry, PostHog.
+
+## Environment
+
+See `.env.example`. Required: `DATABASE_URL`, `BETTER_AUTH_SECRET` (≥32 chars), `BETTER_AUTH_URL`. Optional: GitHub OAuth, Sentry, PostHog, Vercel Blob.
+
+The Docker Compose database uses `fauna:fauna`. If you use Homebrew Postgres instead, do not run Compose and change `DATABASE_URL` after copying `.env` (for example `postgresql://YOUR_USER@localhost:5432/fauna?schema=public`).
+
+## Local database and assets
+
+```bash
+pnpm install
+cp .env.example .env
+docker compose up -d
+pnpm db:generate
+pnpm db:migrate
+pnpm content:expand
+pnpm db:seed
+pnpm assets:elephant
+pnpm assets:fetch
+pnpm assets:import -- --help
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+3D models are not committed to git. Generate the educational elephant with `pnpm assets:elephant`, fetch the Quaternius CC0 wolf/fox with `pnpm assets:fetch`, or import any licensed GLB with `pnpm assets:import`. See [ASSETS.md](ASSETS.md).
+
+## Tests
+
+```bash
+pnpm test
+pnpm test:e2e
+```
+
+GitHub Actions runs Biome, typecheck, Vitest, migrate, seed, build, and Playwright. See [TESTING.md](TESTING.md).
+
+## Deployment
+
+Vercel for the app, [Neon](https://neon.tech) for PostgreSQL, [Vercel Blob](https://vercel.com/storage/blob) for photos and production GLB files (`BLOB_READ_WRITE_TOKEN`).
+
+1. Push this repo to GitHub and import the project in Vercel.
+2. Create a Neon project and copy the **pooled** connection string into `DATABASE_URL`.
+3. Set `DIRECT_URL` to the **unpooled** Neon URL for `pnpm db:migrate:deploy`.
+4. Set `BETTER_AUTH_SECRET` (≥32 chars) and `BETTER_AUTH_URL` to the production origin.
+5. Create a Vercel **Blob** store (private is fine), set `BLOB_READ_WRITE_TOKEN`, then locally run `pnpm assets:mirror-media` and commit the updated `content/assets/media-map.json`. Photos are served via `/api/media/…`.
+6. Optional: Sentry DSNs, PostHog key (EU host by default), GitHub OAuth.
+7. Deploy from `main`. After the first deploy, run migrate + seed against production once.
+
+`vercel.json` pins the Next.js framework. Security headers live in `next.config.ts`. See [ASSETS.md](ASSETS.md) for the media mirror pipeline.
+
+## Attribution records
+
+Biological facts are curated citations (IUCN pages, Animal Diversity Web, AnAge, GBIF names). Photographs are Wikimedia Commons files with licenses stored on each `MediaAsset`. 3D meshes record creator, source URL, license, and attribution on each `ThreeDAsset`. Canonical records live in [ASSETS.md](ASSETS.md) and `content/assets/licenses.json`.

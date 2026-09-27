@@ -1,25 +1,28 @@
 # Fauna
 
-An interactive wildlife encyclopedia and digital field guide. Discover a species, open its profile, inspect structured biology, and — where a licensed model exists — explore it in 3D.
+[![Build](https://github.com/andrewbaisden/fauna/actions/workflows/ci.yml/badge.svg)](https://github.com/andrewbaisden/fauna/actions/workflows/ci.yml)
+![Release](https://img.shields.io/badge/release-v0.1.0-17363A)
+[![License](https://img.shields.io/badge/license-responsible%20use-2F6F6A)](#license-and-responsible-use)
 
-Fauna is not a Pokédex. There are no hit points, capture mechanics or fictional stats. Size, mass, speed, diet, habitat, conservation status and life stages are scientific concepts with sources.
+Fauna is an interactive wildlife encyclopedia and digital field guide. Open the catalogue, read a species the way a field guide is written, and — where a licensed model exists — turn the specimen around in 3D.
 
-![Fauna](docs/fauna.png)
+It records measurable biology: size, mass, speed, diet, habitat, conservation status, and life stages, each tied to a source you can check.
 
-## Features
+![Fauna homepage, with animal groups and featured species cards for the African elephant, axolotl, and bald eagle](docs/fauna.png)
 
-- Curated catalogue of 30 launch species (quality over a global dump)
-- Search and shareable filters
-- Species profiles with measurements, taxonomy, life stages, adaptations, behaviour and conservation
-- Isolated interactive 3D viewer with photograph fallbacks
-- Two-species comparison and 2D scale references
-- Optional accounts for favourites (public browsing needs no login)
+## What you can do
 
-## Stack
+- **Discover** a curated launch catalogue of 30 species, grouped as mammals, birds, reptiles, amphibians, fish, and invertebrates.
+- **Search and filter** by name, group, diet, size, activity, and conservation status. Filter URLs are shareable.
+- **Read a profile** with measurements, taxonomy, life stages, adaptations, behaviour, habitat, and conservation.
+- **Inspect a specimen** in an isolated 3D viewer when a licensed model is available. Profiles fall back to photography when it is not.
+- **Compare two species** side by side, including a 2D scale reference.
+- **Follow habitat and taxonomy hubs**, and see an illustrative range map with a written region list.
+- **Save favourites** with an optional account. Browsing the catalogue needs no login.
 
-Next.js 16 App Router, TypeScript strict, Tailwind CSS, Prisma 7 + PostgreSQL, Better Auth, Zod, Zustand, TanStack Query, React Three Fiber, Leaflet, Vitest, Playwright, Biome, Sentry, PostHog.
+## Getting started
 
-## Setup
+You need Node.js 22, [pnpm](https://pnpm.io) 12, and PostgreSQL 16. Docker Compose is the simplest database.
 
 ```bash
 pnpm install
@@ -29,43 +32,34 @@ pnpm db:generate
 pnpm db:migrate
 pnpm content:expand
 pnpm db:seed
-pnpm assets:elephant
-pnpm assets:fetch
-pnpm assets:import -- --help
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-The commands above use Docker Compose and its `fauna:fauna` credentials. If you use Homebrew Postgres instead, do not run the Compose command and change `DATABASE_URL` after copying `.env` (for example `postgresql://YOUR_USER@localhost:5432/fauna?schema=public`).
+Copy `.env.example` and set `DATABASE_URL`, `BETTER_AUTH_SECRET` (at least 32 characters), and `BETTER_AUTH_URL`. The Compose database already matches the example URL (`fauna:fauna` on port 5432).
 
-3D models are not committed to git. Generate the educational elephant with `pnpm assets:elephant`, fetch the Quaternius CC0 wolf/fox with `pnpm assets:fetch`, or import any licensed GLB with `pnpm assets:import` (see [ASSETS.md](ASSETS.md)).
+3D models are fetched or generated locally; they are not stored in git. See [ASSETS.md](ASSETS.md) before loading meshes. Environment variables, a Homebrew Postgres setup, tests, and deployment are in [DEVELOPMENT.md](DEVELOPMENT.md).
 
-## Environment
+## Documentation
 
-See `.env.example`. Required: `DATABASE_URL`, `BETTER_AUTH_SECRET` (≥32 chars), `BETTER_AUTH_URL`. Optional: GitHub OAuth, Sentry, PostHog, Vercel Blob.
+| Guide | Contents |
+| --- | --- |
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Stack, environment, tests, and deployment |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Layers, routes, measurements, 3D, and maps |
+| [ASSETS.md](ASSETS.md) | Photographs, 3D models, and their licenses |
+| [TESTING.md](TESTING.md) | Unit, component, and end-to-end tests |
+| [DECISIONS.md](DECISIONS.md) | Architecture decisions |
 
-## Tests
+## License and responsible use
 
-```bash
-pnpm test
-pnpm test:e2e
-```
+Fauna is an educational field guide. Use it to look up structured facts, original explanations, and the sources those facts cite.
 
-## Deployment
+- **Conservation status is curated and dated.** It is a stored assessment, not a live query of the [IUCN Red List](https://www.iucnredlist.org/). Check IUCN before relying on a status for research, policy, or fieldwork.
+- **Measurements are ranges**, stored in canonical units and converted for display. They are biology, not scores.
+- **Range maps are illustrative.** Every map has a written region list. Polygons are not IUCN spatial data.
+- **Photographs** come from Wikimedia Commons. Each image keeps its creator, source, license, and attribution.
+- **3D models** keep creator, source URL, license, and attribution. Some catalogue meshes are CC BY-NC (or a non-commercial variant). Host those only on a non-commercial instance, or replace them before any commercial deploy. Allowed production licenses and the import checklist are in [ASSETS.md](ASSETS.md).
+- **Do not treat the writing as a copy of another encyclopedia.** Explanations in the catalogue are original and sit next to citations.
 
-Vercel for the app, [Neon](https://neon.tech) for PostgreSQL, [Vercel Blob](https://vercel.com/storage/blob) for photos and production GLB files (`BLOB_READ_WRITE_TOKEN`).
-
-1. Push this repo to GitHub and import the project in Vercel.
-2. Create a Neon project and copy the **pooled** connection string into `DATABASE_URL`.
-3. Set `DIRECT_URL` to the **unpooled** Neon URL for `pnpm db:migrate:deploy`.
-4. Set `BETTER_AUTH_SECRET` (≥32 chars) and `BETTER_AUTH_URL` to the production origin.
-5. Create a Vercel **Blob** store (private is fine), set `BLOB_READ_WRITE_TOKEN`, then locally run `pnpm assets:mirror-media` and commit the updated `content/assets/media-map.json`. Photos are served via `/api/media/…`.
-6. Optional: Sentry DSNs, PostHog key (EU host by default), GitHub OAuth.
-7. Deploy from `main`. After the first deploy, run migrate + seed against production once.
-
-`vercel.json` pins the Next.js framework. Security headers live in `next.config.ts`. See [ASSETS.md](ASSETS.md) for the media mirror pipeline.
-
-## Attribution
-
-Biological facts are curated citations (IUCN pages, Animal Diversity Web, AnAge, GBIF names). Photographs are Wikimedia Commons files with licenses stored on each `MediaAsset`. 3D meshes are Sketchfab models with creator, source URL, license and attribution on each `ThreeDAsset` (see [ASSETS.md](ASSETS.md) and `content/assets/licenses.json`).
+This repository does not yet include an open-source license for the application code. Content licenses above are separate from the code. Until a `LICENSE` file is added, do not redistribute the source.
